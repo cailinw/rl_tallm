@@ -1,0 +1,46 @@
+model:
+  name: "Qwen/Qwen2.5-7B-Instruct"
+  lora_r: 16
+  lora_alpha: 32
+  load_in_4bit: false
+
+training:
+  w_latency: 0.3
+  inject_latency_context: true
+  void_turn_filter: true
+  num_generations: 4
+  max_steps_per_episode: 8
+  learning_rate: 5e-6
+  kl_coeff: 0.04
+  total_train_steps: 200
+  eval_every_n_steps: 50
+  random_seed: 42
+
+data:
+  benchmark: "live_api_bench"  # "toolbench" | "live_api_bench"
+  toolbench_repo: "ToolBench/ToolBench"
+  live_api_bench_repo: "LiveAPIBench/LiveAPIBench"
+  dataset_config_name: null
+  strict_benchmark_loading: false
+  allow_synthetic_fallback: true
+  train_categories: ["Social", "Finance", "Weather", "News"]
+  test_categories: ["Travel", "Sports"]
+  min_tools_per_task: 2
+  require_cost_variance: true
+
+environment:
+  executor_mode: "replay"  # "live" | "replay"
+  trace_dir: "data/latency_traces"
+  call_log_dir: "data/call_logs"
+  timeout_threshold_ms: 5000
+
+reward:
+  r_task_correct: 1.0
+  r_task_partial: 0.3
+  r_timeout_penalty: -2.0
+  latency_penalty_only_on_success: true
+
+eval:
+  degradation_multipliers: [2.0, 5.0]
+  degradation_timeout_rates: [0.0, 0.15]
+  n_eval_tasks: 200

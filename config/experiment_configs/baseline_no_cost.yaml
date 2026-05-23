@@ -1,0 +1,3 @@
+training:
+  w_latency: 0.0
+  inject_latency_context: false

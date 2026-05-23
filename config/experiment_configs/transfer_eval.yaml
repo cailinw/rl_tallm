@@ -1,0 +1,3 @@
+data:
+  train_categories: ["Social", "Finance", "Weather", "News"]
+  test_categories: ["Travel", "Sports", "Entertainment"]

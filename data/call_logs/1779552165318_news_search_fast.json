@@ -1,0 +1,1 @@
+{"tool_name": "news_search_fast", "args": {"query": "default"}, "output": {"result": "replay_result_for::news_search_fast", "latency_ms": 125.29693471888446, "success": true, "error": null, "timed_out": false}}

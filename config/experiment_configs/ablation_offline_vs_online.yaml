@@ -1,0 +1,6 @@
+training:
+  w_latency: 0.3
+  inject_latency_context: true
+
+environment:
+  executor_mode: "replay"

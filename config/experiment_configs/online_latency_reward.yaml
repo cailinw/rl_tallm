@@ -1,0 +1,4 @@
+training:
+  w_latency: 0.3
+  inject_latency_context: true
+  void_turn_filter: true

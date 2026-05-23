@@ -1,0 +1,15 @@
+torch>=2.3.0
+transformers>=4.47.0
+trl>=0.12.0
+peft>=0.14.0
+accelerate>=1.0.0
+datasets>=3.0.0
+bitsandbytes>=0.43.0
+vllm>=0.6.0
+requests>=2.31.0
+aiohttp>=3.9.0
+numpy>=1.26.0
+pandas>=2.2.0
+matplotlib>=3.8.0
+wandb>=0.17.0
+pyyaml>=6.0

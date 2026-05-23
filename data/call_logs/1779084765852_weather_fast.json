@@ -1,0 +1,1 @@
+{"tool_name": "weather_fast", "args": {"query": "default"}, "output": {"result": "replay_result_for::weather_fast", "latency_ms": 126.29117874963308, "success": true, "error": null, "timed_out": false}}

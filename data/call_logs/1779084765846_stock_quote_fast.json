@@ -1,0 +1,1 @@
+{"tool_name": "stock_quote_fast", "args": {"query": "default"}, "output": {"result": "replay_result_for::stock_quote_fast", "latency_ms": 119.43533621937559, "success": true, "error": null, "timed_out": false}}
