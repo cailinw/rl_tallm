@@ -1,0 +1,1 @@
+{"tool_name": "weather_fast", "args": {"city": "SF"}, "output": {"result": "replay_result_for::weather_fast", "latency_ms": 71.70577277787966, "success": true, "error": null, "timed_out": false}}

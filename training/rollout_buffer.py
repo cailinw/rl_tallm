@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 
 @dataclass
@@ -10,6 +10,7 @@ class Episode:
     trajectory: List[Dict[str, Any]]
     final_answer: str
     reward: float
+    logprob_sum: Optional[Any] = None
     info: Dict[str, Any] = field(default_factory=dict)
 
 

@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import json
 import random
 from collections import Counter
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from pathlib import Path
+from typing import Any, Dict, Iterable, List, Optional
 
 
 def _first_non_empty(row: Dict[str, Any], keys: Iterable[str]) -> Any:
@@ -89,7 +91,27 @@ def _extract_tools(row: Dict[str, Any]) -> List[str]:
             deduped.append(name)
         return deduped
     if isinstance(raw, str):
-        return [x.strip() for x in raw.split(",") if x.strip()]
+        text = raw.strip()
+        if not text:
+            return []
+        parsed = None
+        if text.startswith("[") and text.endswith("]"):
+            try:
+                parsed = json.loads(text)
+            except Exception:
+                try:
+                    parsed = ast.literal_eval(text)
+                except Exception:
+                    parsed = None
+        if isinstance(parsed, list):
+            names = []
+            for item in parsed:
+                name = _extract_tool_name(item)
+                if name:
+                    names.append(name)
+            if names:
+                return names
+        return [x.strip() for x in text.split(",") if x.strip()]
     return []
 
 
@@ -187,29 +209,83 @@ def _normalize_common_task(row: Dict[str, Any], benchmark: str) -> Dict[str, Any
     }
 
 
-def _normalize_toolbench_task(row: Dict[str, Any]) -> Dict[str, Any]:
-    return _normalize_common_task(row, benchmark="toolbench")
+def _normalize_catp_llm_task(row: Dict[str, Any]) -> Dict[str, Any]:
+    return _normalize_common_task(row, benchmark="catp_llm")
 
 
-def _normalize_live_api_bench_task(row: Dict[str, Any]) -> Dict[str, Any]:
-    return _normalize_common_task(row, benchmark="live_api_bench")
+def _normalize_wild_tool_bench_task(row: Dict[str, Any]) -> Dict[str, Any]:
+    return _normalize_common_task(row, benchmark="wild_tool_bench")
 
 
-def _pick_repo_and_normalizer(data_cfg: Dict[str, Any], benchmark: str):
-    if benchmark == "toolbench":
-        return data_cfg.get("toolbench_repo", "ToolBench/ToolBench"), _normalize_toolbench_task
-    if benchmark == "live_api_bench":
-        return data_cfg.get("live_api_bench_repo", "LiveAPIBench/LiveAPIBench"), _normalize_live_api_bench_task
-    raise ValueError(f"Unsupported benchmark: {benchmark}")
+def _pick_path_and_normalizer(data_cfg: Dict[str, Any], benchmark: str):
+    if benchmark == "catp_llm":
+        return data_cfg.get("catp_llm_path"), _normalize_catp_llm_task
+    if benchmark == "wild_tool_bench":
+        return data_cfg.get("wild_tool_bench_path"), _normalize_wild_tool_bench_task
+    raise ValueError(
+        f"Unsupported benchmark: {benchmark}. Supported benchmarks: catp_llm, wild_tool_bench."
+    )
 
 
-def _load_hf_dataset(repo: str, split: str, data_cfg: Dict[str, Any]):
-    from datasets import load_dataset
+def _load_json_file(path: Path) -> List[Dict[str, Any]]:
+    payload = json.loads(path.read_text())
+    if isinstance(payload, list):
+        return [x for x in payload if isinstance(x, dict)]
+    if isinstance(payload, dict):
+        if "data" in payload and isinstance(payload["data"], list):
+            return [x for x in payload["data"] if isinstance(x, dict)]
+    return []
 
-    config_name = data_cfg.get("dataset_config_name")
-    if config_name:
-        return load_dataset(repo, config_name, split=split)
-    return load_dataset(repo, split=split)
+
+def _load_jsonl_file(path: Path) -> List[Dict[str, Any]]:
+    rows: List[Dict[str, Any]] = []
+    for line in path.read_text().splitlines():
+        if not line.strip():
+            continue
+        obj = json.loads(line)
+        if isinstance(obj, dict):
+            rows.append(obj)
+    return rows
+
+
+def _load_records_from_path(dataset_path: str, split: str) -> List[Dict[str, Any]]:
+    path = Path(dataset_path).expanduser().resolve()
+    if not path.exists():
+        raise FileNotFoundError(f"Dataset path does not exist: {path}")
+    if path.is_file():
+        if path.suffix == ".jsonl":
+            return _load_jsonl_file(path)
+        if path.suffix == ".json":
+            payload = json.loads(path.read_text())
+            if isinstance(payload, dict) and split in payload and isinstance(payload[split], list):
+                return [x for x in payload[split] if isinstance(x, dict)]
+            if isinstance(payload, dict) and "data" in payload and isinstance(payload["data"], list):
+                return [x for x in payload["data"] if isinstance(x, dict)]
+            if isinstance(payload, list):
+                return [x for x in payload if isinstance(x, dict)]
+            raise ValueError(f"Unsupported JSON structure in dataset file: {path}")
+        raise ValueError(f"Unsupported dataset file extension for {path}. Use .json or .jsonl.")
+
+    split_candidates = [
+        path / f"{split}.jsonl",
+        path / f"{split}.json",
+        path / split / "data.jsonl",
+        path / split / "data.json",
+        path / "data" / f"{split}.jsonl",
+        path / "data" / f"{split}.json",
+        path / "data" / "Wild-Tool-Bench.jsonl",
+        path / "wild-tool-bench" / "data" / "Wild-Tool-Bench.jsonl",
+    ]
+    for candidate in split_candidates:
+        if candidate.exists():
+            if candidate.suffix == ".jsonl":
+                return _load_jsonl_file(candidate)
+            if candidate.suffix == ".json":
+                return _load_json_file(candidate)
+    raise FileNotFoundError(
+        f"No supported dataset file found under {path} for split={split}. "
+        "Expected .json/.jsonl in root, split/, data/, or WildToolBench default paths."
+    )
 
 
 def _build_diagnostics(
@@ -269,19 +345,27 @@ def load_tasks_from_benchmark(
     return_diagnostics: bool = False,
 ):
     data_cfg = config.get("data", {})
-    benchmark = data_cfg.get("benchmark", "toolbench").strip().lower()
+    benchmark = data_cfg.get("benchmark", "catp_llm").strip().lower()
     strict_loading = bool(data_cfg.get("strict_benchmark_loading", False))
     allow_synthetic_fallback = bool(data_cfg.get("allow_synthetic_fallback", True))
 
-    repo, normalizer = _pick_repo_and_normalizer(data_cfg, benchmark)
+    dataset_path, normalizer = _pick_path_and_normalizer(data_cfg, benchmark)
+    if not dataset_path and strict_loading:
+        raise RuntimeError(
+            f"Missing dataset path for benchmark={benchmark}. "
+            f"Set data.{benchmark}_path in config."
+        )
 
     try:
-        dataset = _load_hf_dataset(repo=repo, split=split, data_cfg=data_cfg)
-        tasks = [normalizer(dict(row)) for row in dataset]
+        if not dataset_path:
+            raise FileNotFoundError(f"Missing dataset path for benchmark={benchmark}")
+        dataset = _load_records_from_path(dataset_path=dataset_path, split=split)
+        tasks = [normalizer(dict(row)) for row in dataset if isinstance(row, dict)]
     except Exception as exc:
         if strict_loading or not allow_synthetic_fallback:
             raise RuntimeError(
-                f"Failed to load benchmark dataset for benchmark={benchmark}, repo={repo}, split={split}"
+                f"Failed to load benchmark dataset for benchmark={benchmark}, "
+                f"path={dataset_path}, split={split}"
             ) from exc
         # Fallback for local development if dataset access is unavailable.
         tasks = _synthetic_tasks(benchmark)
@@ -318,10 +402,9 @@ def split_by_category(tasks: List[Dict[str, Any]], config: Dict[str, Any]) -> Di
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--benchmark", choices=["toolbench", "live_api_bench"], default="toolbench")
+    parser.add_argument("--benchmark", choices=["catp_llm", "wild_tool_bench"], default="catp_llm")
     parser.add_argument("--split", default="train")
-    parser.add_argument("--repo", default=None, help="Optional dataset repo override.")
-    parser.add_argument("--dataset_config_name", default=None, help="Optional HF dataset config name.")
+    parser.add_argument("--dataset_path", default=None, help="Local path to JSON/JSONL dataset file or root directory.")
     parser.add_argument("--test", action="store_true")
     parser.add_argument("--strict", action="store_true", help="Disable synthetic fallback and fail hard on load errors.")
     parser.add_argument("--inspect", action="store_true", help="Print normalization diagnostics JSON.")
@@ -330,9 +413,8 @@ def main() -> None:
     config = {
         "data": {
             "benchmark": args.benchmark,
-            "toolbench_repo": args.repo or "ToolBench/ToolBench",
-            "live_api_bench_repo": args.repo or "LiveAPIBench/LiveAPIBench",
-            "dataset_config_name": args.dataset_config_name,
+            "catp_llm_path": args.dataset_path if args.benchmark == "catp_llm" else None,
+            "wild_tool_bench_path": args.dataset_path if args.benchmark == "wild_tool_bench" else None,
             "strict_benchmark_loading": args.strict,
             "allow_synthetic_fallback": not args.strict,
             "min_tools_per_task": 2,

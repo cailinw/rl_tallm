@@ -17,10 +17,9 @@ training:
   random_seed: 42
 
 data:
-  benchmark: "live_api_bench"  # "toolbench" | "live_api_bench"
-  toolbench_repo: "ToolBench/ToolBench"
-  live_api_bench_repo: "LiveAPIBench/LiveAPIBench"
-  dataset_config_name: null
+  benchmark: "catp_llm"  # "catp_llm" | "wild_tool_bench"
+  catp_llm_path: "/home/cailinw/rl_tallm/external/OpenCATP-LLM/test_samples.json"
+  wild_tool_bench_path: "/home/cailinw/rl_tallm/external/WildToolBench/wild-tool-bench/data/Wild-Tool-Bench.jsonl"
   strict_benchmark_loading: false
   allow_synthetic_fallback: true
   train_categories: ["Social", "Finance", "Weather", "News"]

@@ -9,8 +9,8 @@ Reference implementation scaffold for online GRPO-style training with latency-aw
 - Rolling latency tracker and degradation wrapper
 - Reward computation with correctness, latency, and timeout components
 - Task loading from:
-  - `ToolBench`
-  - `Live API Bench` (arXiv: 2506.11266) via configurable dataset source
+  - `OpenCATP-LLM` dataset exports (local JSON/JSONL path)
+  - `WildToolBench` (`wild-tool-bench/data/Wild-Tool-Bench.jsonl`)
 - Training/evaluation entry points and experiment configs
 
 ## Quick start
@@ -27,18 +27,20 @@ Run a short debug train loop:
 python training/train.py --config config/base_config.yaml --debug_steps 10
 ```
 
-Switch benchmark source (ToolBench vs Live API Bench):
+Switch benchmark source (CATP-LLM vs WildToolBench):
 
 ```yaml
 data:
-  benchmark: "toolbench"        # or "live_api_bench"
+  benchmark: "catp_llm"         # or "wild_tool_bench"
+  catp_llm_path: "/path/to/catp_dataset.jsonl"
+  wild_tool_bench_path: "/path/to/Wild-Tool-Bench.jsonl"
 ```
 
 Validate/inspect benchmark schema normalization:
 
 ```bash
-python data/toolbench_loader.py --benchmark toolbench --split train --inspect --strict
-python data/toolbench_loader.py --benchmark live_api_bench --split train --inspect --strict
+python data/toolbench_loader.py --benchmark catp_llm --dataset_path /path/to/catp_dataset.jsonl --split train --inspect --strict
+python data/toolbench_loader.py --benchmark wild_tool_bench --dataset_path /path/to/Wild-Tool-Bench.jsonl --split train --inspect --strict
 ```
 
 ## Notes

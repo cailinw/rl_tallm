@@ -103,7 +103,11 @@ def main() -> None:
         reward_config=config,
         max_steps=int(config["training"].get("max_steps_per_episode", 8)),
     )
-    policy = PolicyModel(config["model"]["name"], seed=int(config["training"].get("random_seed", 42)))
+    policy = PolicyModel(
+        config["model"]["name"],
+        seed=int(config["training"].get("random_seed", 42)),
+        training_cfg=config.get("training", {}),
+    )
     trainer = OnlineGRPOTrainer(config=config, policy=policy, env=env, registry=registry)
 
     total_steps = args.debug_steps or int(config["training"].get("total_train_steps", 200))
