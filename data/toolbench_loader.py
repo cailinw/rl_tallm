@@ -46,6 +46,12 @@ def _extract_tool_name(item: Any) -> Optional[str]:
     if isinstance(item, str):
         return item.strip() or None
     if isinstance(item, dict):
+        # WildToolBench stores tools in OpenAI function-calling format.
+        function = item.get("function")
+        if isinstance(function, dict):
+            name = _normalize_text(function.get("name"))
+            if name:
+                return name
         candidate = _first_non_empty(
             item,
             keys=[
@@ -137,6 +143,38 @@ def _extract_required_tools(row: Dict[str, Any], available_tools: List[str]) -> 
     return [available_tools[0]] if available_tools else []
 
 
+def _extract_answer_tool_names(row: Dict[str, Any], available_tools: List[str]) -> List[str]:
+    raw = _first_non_empty(row, keys=["english_answer_list", "answer_list"])
+    if not isinstance(raw, list):
+        return []
+
+    available = set(available_tools)
+    names: List[str] = []
+    for turn in raw:
+        calls = turn if isinstance(turn, list) else [turn]
+        for call in calls:
+            if not isinstance(call, dict):
+                continue
+            action = call.get("action")
+            if not isinstance(action, dict):
+                continue
+            name = _normalize_text(action.get("name"))
+            if not name or name == "prepare_to_answer":
+                continue
+            if available and name not in available:
+                continue
+            names.append(name)
+
+    seen = set()
+    deduped = []
+    for name in names:
+        if name in seen:
+            continue
+        seen.add(name)
+        deduped.append(name)
+    return deduped
+
+
 def _extract_query(row: Dict[str, Any]) -> str:
     # Ordered for benchmark-agnostic robustness.
     direct = _first_non_empty(
@@ -174,6 +212,34 @@ def _extract_ground_truth(row: Dict[str, Any]) -> str:
         ],
     )
     return _normalize_text(value)
+
+
+def _last_assistant_message(messages: Any) -> str:
+    if not isinstance(messages, list):
+        return ""
+    for message in reversed(messages):
+        if not isinstance(message, dict):
+            continue
+        if message.get("role") != "assistant":
+            continue
+        text = _normalize_text(message.get("content"))
+        if text:
+            return text
+    return ""
+
+
+def _extract_wild_category(row: Dict[str, Any], available_tools: List[str]) -> str:
+    raw = _first_non_empty(row, keys=["english_task_types", "task_types"])
+    if isinstance(raw, list):
+        normalized = [_normalize_text(item) for item in raw]
+        normalized = [item for item in normalized if item]
+        for item in normalized:
+            if item != "Chat":
+                return item
+        if normalized:
+            return normalized[0]
+    category = _normalize_text(raw)
+    return category or _extract_category(row, available_tools)
 
 
 def _extract_category(row: Dict[str, Any], available_tools: List[str]) -> str:
@@ -214,7 +280,29 @@ def _normalize_catp_llm_task(row: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def _normalize_wild_tool_bench_task(row: Dict[str, Any]) -> Dict[str, Any]:
-    return _normalize_common_task(row, benchmark="wild_tool_bench")
+    tools = _extract_tools(row)
+    query = _normalize_text(_first_non_empty(row, keys=["english_tasks", "tasks"]))
+    if not query:
+        query = _extract_query(row)
+
+    ground_truth = _last_assistant_message(row.get("english_messages"))
+    if not ground_truth:
+        ground_truth = _last_assistant_message(row.get("messages"))
+    if not ground_truth:
+        ground_truth = _extract_ground_truth(row)
+
+    required_tools = _extract_answer_tool_names(row, tools)
+    if not required_tools:
+        required_tools = _extract_required_tools(row, tools)
+
+    return {
+        "query": query,
+        "available_tools": tools,
+        "ground_truth": ground_truth,
+        "required_tools": required_tools,
+        "category": _extract_wild_category(row, tools),
+        "source_benchmark": "wild_tool_bench",
+    }
 
 
 def _pick_path_and_normalizer(data_cfg: Dict[str, Any], benchmark: str):
