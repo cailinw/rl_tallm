@@ -106,7 +106,7 @@ def main() -> None:
     policy = PolicyModel(
         config["model"]["name"],
         seed=int(config["training"].get("random_seed", 42)),
-        training_cfg=config.get("training", {}),
+        training_cfg={**config.get("model", {}), **config.get("training", {})},
     )
     trainer = OnlineGRPOTrainer(config=config, policy=policy, env=env, registry=registry)
 
@@ -117,6 +117,7 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     (output_dir / "config_resolved.yaml").write_text(yaml.safe_dump(config, sort_keys=False))
     (output_dir / "train_metrics.json").write_text(json.dumps([m.__dict__ for m in metrics], ensure_ascii=True, indent=2))
+    policy.save_adapter(output_dir)
     if metrics:
         last = metrics[-1]
         print(

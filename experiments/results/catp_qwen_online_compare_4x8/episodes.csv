@@ -1,0 +1,37 @@
+policy,split,task_id,sample_id,valid,task_score,cost_price,exec_time,qop,reward,plan,error,raw_response
+qwen_baseline,test,20,3,True,0.5414637327194214,0.05860052742582026,904.6701990067959,0.2190502132006102,0.15096458274612096,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,20,12,True,0.590399980545044,0.053383084401716296,803.6507720351219,0.2481197646533091,0.18814337086815164,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,20,15,True,0.57622230052948,0.03291712397433058,403.95008304715157,0.2590805005595825,0.23125757997285956,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,20,27,True,0.6062340140342712,0.04820096216683,703.2022890150547,0.2606070584199253,0.20869629703221515,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_online_grpo,test,20,3,True,0.5414637327194214,0.017194071500579163,101.47035402059555,0.25556787247227397,0.25198779520736153,"[""image_captioning"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"
+qwen_online_grpo,test,20,12,True,0.590399980545044,0.017073453201523862,100.75851997733116,0.28014237346683263,0.2765874116740269,"[""image_captioning"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"
+qwen_online_grpo,test,20,15,True,0.5545567870140076,0.017147063959865205,101.19293701648712,0.26215585705214933,0.25858556782542247,"[""image_captioning"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"
+qwen_online_grpo,test,20,27,True,0.5930097699165344,0.017102382584485314,100.92924800515175,0.2814217544174291,0.2778607688655094,"[""image_captioning"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"

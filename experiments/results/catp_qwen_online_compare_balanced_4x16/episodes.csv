@@ -1,0 +1,185 @@
+policy,split,task_id,sample_id,valid,task_score,cost_price,exec_time,qop,reward,plan,error,raw_response
+qwen_baseline,test,20,3,True,0.5414637327194214,0.058586477446088664,904.1342250108719,0.2190626043208147,0.15102520513557915,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,20,12,True,0.590399980545044,0.05337189008755481,803.2847590446472,0.24812963727199125,0.18818556932427982,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,20,15,True,0.57622230052948,0.03268641163452028,402.65436497330666,0.25928397304778994,0.2315025079501492,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,20,27,True,0.6062340140342712,0.0482740009279047,704.4390120208263,0.2605426432331881,0.20853610535110062,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,21,3,True,0.41486334800720215,0.04252176746568006,803.6507469713688,0.1699303863120349,0.10580571557362417,"[""image_super_resolution"", [""input_of_query""], ""object_detection"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""object_detection"",""dependencies"":[""output_of_super_resolution""]}]}"
+qwen_baseline,test,21,12,True,0.7642796635627747,0.042543201672566255,803.9932630062103,0.3446196405868205,0.2804689046444832,"[""image_super_resolution"", [""input_of_query""], ""object_detection"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""object_detection"",""dependencies"":[""output_of_super_resolution""]}]}"
+qwen_baseline,test,21,15,True,0.583493709564209,0.021964365174909826,404.91752004623413,0.27237578846761684,0.24027292019002616,"[""image_super_resolution"", [""input_of_query""], ""object_detection"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""object_detection"",""dependencies"":[""output_of_super_resolution""]}]}"
+qwen_baseline,test,21,27,True,0.7601457834243774,0.03735045546204092,703.4640470147133,0.3471323471587775,0.2910512592796969,"[""image_super_resolution"", [""input_of_query""], ""object_detection"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""object_detection"",""dependencies"":[""output_of_super_resolution""]}]}"
+qwen_baseline,test,31,3,True,0.5414637327194214,0.05337388938732786,803.3826610147953,0.22365975011366035,0.16370665556456723,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,31,12,True,0.590399980545044,0.0533640552723977,803.5413700342178,0.2481365470425565,0.1881638256329013,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,31,15,True,0.57622230052948,0.03295232404758903,404.1403960287571,0.25904945650490874,0.23122094863806975,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_baseline,test,31,27,True,0.5930097699165344,0.04825159372407317,704.0463519692421,0.2539502827940108,0.2019744528993064,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""output_of_image_super_resolution""]}]}"""
+qwen_baseline,test,36,3,True,0.5268006324768066,0.01711409765955419,100.99838501214981,0.24830685380341616,0.24474342890741124,"[""image_captioning"", [""input_of_query""]]",,"{""plan"":[{""tool"":""image_captioning"",""dependencies"":[""input_of_query""]}]}"""
+qwen_baseline,test,36,12,True,0.590399980545044,0.017120770666049178,101.03776600956917,0.2801006427026674,0.27653582833854046,"[""image_captioning"", [""input_of_query""]]",,"{""plan"":[{""tool"":""image_captioning"",""dependencies"":[""input_of_query""]}]}"""
+qwen_baseline,test,36,15,True,0.5545567870140076,0.017163828911122017,101.29187598824501,0.2621410715129376,0.25856729145261825,"[""image_captioning"", [""input_of_query""]]",,"{""plan"":[{""tool"":""image_captioning"",""dependencies"":[""input_of_query""]}]}"""
+qwen_baseline,test,36,27,True,0.5930097699165344,0.017203750326304543,101.52747398614883,0.28133235500919246,0.2777502623965001,"[""image_captioning"", [""input_of_query""]]",,"{""plan"":[{""tool"":""image_captioning"",""dependencies"":[""input_of_query""]}]}"""
+qwen_online_grpo,test,20,3,True,0.5414637327194214,0.053616263739949516,805.9132059812546,0.2234459925285821,0.16333241389161046,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,20,12,True,0.590399980545044,0.05420524250965833,809.2297239899635,0.24739467749039254,0.18717439661869645,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,20,15,True,0.57622230052948,0.03309080243324916,405.11923706531525,0.25892732804955004,0.2310538253415839,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,20,27,True,0.6062340140342712,0.048347329629840605,705.6157650053501,0.2604779723384618,0.20838176570168032,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,21,3,True,0.5329809784889221,0.006391074668159405,103.1708320081234,0.2608539989461128,0.25297786870956906,"[""object_detection"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""object_detection"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"
+qwen_online_grpo,test,21,12,True,0.7642796635627747,0.04263565051543121,805.5892120301723,0.34453810703683746,0.2802630853206545,"[""image_super_resolution"", [""input_of_query""], ""object_detection"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""object_detection"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,21,15,True,0.583493709564209,0.022023930140340955,405.86096799373627,0.27232325624616643,0.24014879291256036,"[""image_super_resolution"", [""input_of_query""], ""object_detection"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""object_detection"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,21,27,True,0.8293204307556152,0.0063583948290825325,102.64325597882271,0.40905254646013045,0.4012166923653841,"[""object_detection"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""object_detection"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"
+qwen_online_grpo,test,31,3,True,0.5414637327194214,0.05386313648420187,808.7950889468193,0.2232282676700638,0.16292078922292783,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,31,12,True,0.590399980545044,0.05353429666670932,805.62455701828,0.247986405788192,0.18787038623733932,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,31,15,True,0.57622230052948,0.03303356035467248,405.3063830137253,0.2589778116438291,0.23106373178603118,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,31,27,True,0.5930097699165344,0.04844880360995127,706.1837669610977,0.25377635717645725,0.2016621064571818,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_super_resolution"",
+      ""dependencies"": [""input_of_query""]
+    },
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""result_of_image_super_resolution""]
+    }
+  ]
+}"
+qwen_online_grpo,test,36,3,True,0.5268006324768066,0.01730173573740282,102.10573899745941,0.24814136986521973,0.24453887446995598,"[""image_captioning"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"
+qwen_online_grpo,test,36,12,True,0.590399980545044,0.017322191246706663,102.22645801305771,0.27992300354059974,0.2763162488478629,"[""image_captioning"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"
+qwen_online_grpo,test,36,15,True,0.5545567870140076,0.017341602114327722,102.3410120010376,0.26198428771878673,0.2583734912497362,"[""image_captioning"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"
+qwen_online_grpo,test,36,27,True,0.5930097699165344,0.017237187860538804,101.72480699419975,0.2813028653932675,0.27771381032857784,"[""image_captioning"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"

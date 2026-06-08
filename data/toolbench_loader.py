@@ -121,6 +121,52 @@ def _extract_tools(row: Dict[str, Any]) -> List[str]:
     return []
 
 
+def _extract_tool_details(row: Dict[str, Any]) -> List[Dict[str, Any]]:
+    raw = _first_non_empty(
+        row,
+        keys=[
+            "available_tools",
+            "tools",
+            "tool_names",
+            "apis",
+            "api_list",
+            "candidate_tools",
+        ],
+    )
+    if not isinstance(raw, list):
+        return []
+
+    details: List[Dict[str, Any]] = []
+    seen = set()
+    for item in raw:
+        name = _extract_tool_name(item)
+        if not name or name in seen:
+            continue
+        seen.add(name)
+
+        description = ""
+        parameters: Dict[str, Any] = {}
+        if isinstance(item, dict):
+            function = item.get("function")
+            if isinstance(function, dict):
+                description = _normalize_text(function.get("description"))
+                raw_parameters = function.get("parameters")
+                parameters = raw_parameters if isinstance(raw_parameters, dict) else {}
+            else:
+                description = _normalize_text(item.get("description"))
+                raw_parameters = item.get("parameters") or item.get("schema")
+                parameters = raw_parameters if isinstance(raw_parameters, dict) else {}
+
+        details.append(
+            {
+                "name": name,
+                "description": description,
+                "parameters": parameters,
+            }
+        )
+    return details
+
+
 def _extract_required_tools(row: Dict[str, Any], available_tools: List[str]) -> List[str]:
     raw = _first_non_empty(
         row,
@@ -268,6 +314,7 @@ def _normalize_common_task(row: Dict[str, Any], benchmark: str) -> Dict[str, Any
     return {
         "query": _extract_query(row),
         "available_tools": tools,
+        "tool_details": _extract_tool_details(row),
         "ground_truth": _extract_ground_truth(row),
         "required_tools": _extract_required_tools(row, tools),
         "category": _extract_category(row, tools),
@@ -298,6 +345,7 @@ def _normalize_wild_tool_bench_task(row: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "query": query,
         "available_tools": tools,
+        "tool_details": _extract_tool_details(row),
         "ground_truth": ground_truth,
         "required_tools": required_tools,
         "category": _extract_wild_category(row, tools),

@@ -3,7 +3,8 @@ from __future__ import annotations
 import json
 import random
 from dataclasses import dataclass
-from typing import Dict, List, Optional, Tuple
+from pathlib import Path
+from typing import Dict, List, Optional
 
 import torch
 
@@ -39,6 +40,10 @@ class PolicyModel:
         self.top_p = float(self.training_cfg.get("top_p", 0.95))
         self.learning_rate = float(self.training_cfg.get("learning_rate", 5e-6))
         self.max_grad_norm = float(self.training_cfg.get("max_grad_norm", 1.0))
+        self.use_lora = bool(self.training_cfg.get("use_lora", False))
+        self.load_in_4bit = bool(self.training_cfg.get("load_in_4bit", False))
+        self.gradient_checkpointing = bool(self.training_cfg.get("gradient_checkpointing", self.use_lora))
+        self.torch_dtype = self._resolve_dtype(str(self.training_cfg.get("torch_dtype", "auto")))
 
         self.hf_model = None
         self.hf_tokenizer = None
@@ -48,21 +53,102 @@ class PolicyModel:
         if self.use_hf_policy:
             self._init_hf_model()
 
+    def _resolve_dtype(self, dtype_name: str):
+        if dtype_name == "auto":
+            if torch.cuda.is_available() and torch.cuda.is_bf16_supported():
+                return torch.bfloat16
+            return torch.float16 if torch.cuda.is_available() else torch.float32
+        if dtype_name == "bfloat16":
+            return torch.bfloat16
+        if dtype_name == "float16":
+            return torch.float16
+        if dtype_name == "float32":
+            return torch.float32
+        raise ValueError(f"Unsupported torch_dtype={dtype_name!r}")
+
     def _init_hf_model(self) -> None:
         try:
-            from transformers import AutoModelForCausalLM, AutoTokenizer
-        except Exception:
+            from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+        except Exception as exc:
             self.use_hf_policy = False
+            print(f"Falling back to heuristic policy because transformers import failed: {exc}")
             return
 
         self.hf_tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         if self.hf_tokenizer.pad_token is None:
             self.hf_tokenizer.pad_token = self.hf_tokenizer.eos_token
-        self.hf_model = AutoModelForCausalLM.from_pretrained(self.model_name).to(self.policy_device)
+
+        model_kwargs = {
+            "torch_dtype": self.torch_dtype,
+            "low_cpu_mem_usage": True,
+        }
+        if self.load_in_4bit:
+            if not torch.cuda.is_available():
+                raise RuntimeError("load_in_4bit requires a CUDA GPU.")
+            model_kwargs["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type=str(self.training_cfg.get("bnb_4bit_quant_type", "nf4")),
+                bnb_4bit_compute_dtype=self.torch_dtype,
+                bnb_4bit_use_double_quant=bool(self.training_cfg.get("bnb_4bit_use_double_quant", True)),
+            )
+            model_kwargs["device_map"] = {"": self.policy_device}
+
+        self.hf_model = AutoModelForCausalLM.from_pretrained(self.model_name, **model_kwargs)
+        if not self.load_in_4bit:
+            self.hf_model = self.hf_model.to(self.policy_device)
+
+        if self.enable_policy_updates and self.use_lora:
+            self._attach_lora_adapter()
+
+        if self.gradient_checkpointing and self.enable_policy_updates:
+            self.hf_model.config.use_cache = False
+            self.hf_model.gradient_checkpointing_enable()
+
         self.hf_model.train(self.enable_policy_updates)
         if self.enable_policy_updates:
-            self.optimizer = torch.optim.AdamW(self.hf_model.parameters(), lr=self.learning_rate)
+            params = [p for p in self.hf_model.parameters() if p.requires_grad]
+            if not params:
+                raise RuntimeError("Policy updates are enabled, but no model parameters require gradients.")
+            self.optimizer = torch.optim.AdamW(params, lr=self.learning_rate)
             self.trainable = True
+
+    def _attach_lora_adapter(self) -> None:
+        try:
+            from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+        except Exception as exc:
+            raise RuntimeError("LoRA requested but peft is not installed or importable.") from exc
+
+        assert self.hf_model is not None
+        if self.load_in_4bit:
+            self.hf_model = prepare_model_for_kbit_training(
+                self.hf_model,
+                use_gradient_checkpointing=self.gradient_checkpointing,
+            )
+
+        target_modules = self.training_cfg.get(
+            "lora_target_modules",
+            ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+        )
+        lora_cfg = LoraConfig(
+            r=int(self.training_cfg.get("lora_r", 16)),
+            lora_alpha=int(self.training_cfg.get("lora_alpha", 32)),
+            lora_dropout=float(self.training_cfg.get("lora_dropout", 0.05)),
+            bias=str(self.training_cfg.get("lora_bias", "none")),
+            task_type="CAUSAL_LM",
+            target_modules=target_modules,
+        )
+        self.hf_model = get_peft_model(self.hf_model, lora_cfg)
+
+    def save_adapter(self, output_dir: str | Path) -> None:
+        if self.hf_model is None or not hasattr(self.hf_model, "save_pretrained"):
+            return
+        if not self.use_lora:
+            return
+        adapter_dir = Path(output_dir) / "adapter"
+        adapter_dir.mkdir(parents=True, exist_ok=True)
+        self.hf_model.save_pretrained(adapter_dir)
+        if self.hf_tokenizer is not None:
+            self.hf_tokenizer.save_pretrained(adapter_dir)
 
     def generate_action(
         self,

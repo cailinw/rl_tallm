@@ -1,0 +1,62 @@
+[
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 0,
+    "selected_tools": [
+      "getCityForecast",
+      "getCityAQIForecast"
+    ],
+    "raw_output": "{\"tools\": [\"getCityForecast\", \"getCityAQIForecast\", \"getCityShow\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 0,
+    "selected_tools": [
+      "getCityForecast",
+      "getCityAQIForecast"
+    ],
+    "raw_output": "{\"tools\": [\"getCityForecast\", \"getCityAQIForecast\", \"getShowDetail\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 1,
+    "selected_tools": [
+      "getParliamentDebates",
+      "getSchoolsAndUniversitiesInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParliamentDebates\", \"getSchoolsAndUniversitiesInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 1,
+    "selected_tools": [
+      "getParliamentDebates",
+      "getSchoolsAndUniversitiesInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParliamentDebates\", \"getSchoolsAndUniversitiesInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 2,
+    "selected_tools": [
+      "createTransaction",
+      "updateTransaction"
+    ],
+    "raw_output": "{\"tools\": [\"createTransaction\", \"updateTransaction\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 2,
+    "selected_tools": [
+      "getBudgets",
+      "createTransaction"
+    ],
+    "raw_output": "{\"tools\": [\"getBudgets\", \"createTransaction\", \"syncTransactions\", \"updateTransaction\"]}"
+  }
+]

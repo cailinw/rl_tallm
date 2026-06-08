@@ -1,0 +1,68 @@
+{
+  "data": {
+    "benchmark": "wild_tool_bench",
+    "split": "train",
+    "n_tasks": 256,
+    "n_dropped": 0,
+    "missing_query": 0,
+    "missing_ground_truth": 0,
+    "category_counts": {
+      "Single-Tool": 85,
+      "Parallel Multi-Tool": 64,
+      "Mixed Multi-Tool": 17,
+      "Sequential Multi-Tool": 4,
+      "Clarify": 85,
+      "Chat": 1
+    },
+    "tool_count_histogram": {
+      "2": 3,
+      "3": 66,
+      "4": 73,
+      "5": 49,
+      "6": 25,
+      "7": 12,
+      "8": 7,
+      "9": 11,
+      "10": 5,
+      "11": 2,
+      "12": 1,
+      "13": 1,
+      "17": 1
+    }
+  },
+  "n_tasks_used": 256,
+  "n_unique_tools": 618,
+  "latency_profile": "hash",
+  "policies": [
+    "random",
+    "latency_aware",
+    "slow",
+    "gold_oracle"
+  ],
+  "conditions": [
+    {
+      "name": "normal",
+      "latency_multiplier": 1.0,
+      "timeout_rate": 0.0,
+      "timeout_threshold_ms": 5000.0
+    },
+    {
+      "name": "degraded_2x",
+      "latency_multiplier": 2.0,
+      "timeout_rate": 0.0,
+      "timeout_threshold_ms": 5000.0
+    },
+    {
+      "name": "degraded_5x_timeout",
+      "latency_multiplier": 5.0,
+      "timeout_rate": 0.15,
+      "timeout_threshold_ms": 5000.0
+    }
+  ],
+  "max_calls": 2,
+  "seeds": [
+    1,
+    2,
+    3
+  ]
+}

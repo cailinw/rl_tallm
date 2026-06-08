@@ -1,0 +1,10 @@
+policy,split,task_id,sample_id,valid,task_score,cost_price,exec_time,qop,reward,plan,error,raw_response
+qwen_baseline,test,20,3,True,0.5414637327194214,0.058573845112437364,903.9637900292873,0.21907374517423422,0.15104856480056328,"[""image_super_resolution"", [""input_of_query""], ""image_captioning"", [""image_super_resolution""]]",,"{""plan"":[{""tool"":""image_super_resolution"",""dependencies"":[""input_of_query""]},{""tool"":""image_captioning"",""dependencies"":[""image_super_resolution""]}]}"""
+qwen_online_grpo,test,20,3,True,0.5414637327194214,0.017169211722851557,101.32364299893379,0.2555897970942282,0.2520148961983915,"[""image_captioning"", [""input_of_query""]]",,"{
+  ""plan"": [
+    {
+      ""tool"": ""image_captioning"",
+      ""dependencies"": [""input_of_query""]
+    }
+  ]
+}"

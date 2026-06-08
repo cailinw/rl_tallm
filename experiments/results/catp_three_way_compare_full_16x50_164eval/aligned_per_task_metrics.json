@@ -1,0 +1,134 @@
+[
+  {
+    "mean_cost_price": 0.23359682669663817,
+    "mean_exec_time_ms": 3054.1658564616996,
+    "mean_qop": 0.03655328990875302,
+    "mean_reward": -0.17964530092824285,
+    "mean_task_score": 0.48513939613249246,
+    "method": "catp_llm_offline",
+    "n": 41,
+    "task_id": "20",
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.8773381185786098,
+    "mean_exec_time_ms": 1230.1735311688446,
+    "mean_qop": -0.7351620850185865,
+    "mean_reward": -0.43094534662925976,
+    "mean_task_score": -0.5190056733241896,
+    "method": "catp_llm_offline",
+    "n": 41,
+    "task_id": "21",
+    "valid_rate": 0.6097560975609756
+  },
+  {
+    "mean_cost_price": 1.2131694207787893,
+    "mean_exec_time_ms": 404.5050927807645,
+    "mean_qop": -1.1243796733063742,
+    "mean_reward": -0.5632560278420231,
+    "mean_task_score": -1.003173323666177,
+    "method": "catp_llm_offline",
+    "n": 41,
+    "task_id": "31",
+    "valid_rate": 0.4146341463414634
+  },
+  {
+    "mean_cost_price": 0.12898272821991918,
+    "mean_exec_time_ms": 1422.7696087556642,
+    "mean_qop": 0.08816745253570593,
+    "mean_reward": -0.00484693684207963,
+    "mean_task_score": 0.4038427762868928,
+    "method": "catp_llm_offline",
+    "n": 41,
+    "task_id": "36",
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.07082753226128423,
+    "mean_exec_time_ms": 1141.548261884509,
+    "mean_qop": 0.2135259504752614,
+    "mean_reward": 0.12642239246966205,
+    "mean_task_score": 0.5519819695775102,
+    "method": "qwen_baseline",
+    "n": 41,
+    "task_id": "20",
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.05996306927053822,
+    "mean_exec_time_ms": 1141.57631859256,
+    "mean_qop": 0.20272592232721534,
+    "mean_reward": 0.11147007761367494,
+    "mean_task_score": 0.5112184882164001,
+    "method": "qwen_baseline",
+    "n": 41,
+    "task_id": "21",
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.07109192212938267,
+    "mean_exec_time_ms": 1146.557516464373,
+    "mean_qop": 0.21633713446327832,
+    "mean_reward": 0.12883362982810043,
+    "mean_task_score": 0.5580706850784581,
+    "method": "qwen_baseline",
+    "n": 41,
+    "task_id": "31",
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.01715325705989744,
+    "mean_exec_time_ms": 101.2294858308827,
+    "mean_qop": 0.26436985624824544,
+    "mean_reward": 0.2607982774802865,
+    "mean_task_score": 0.558995709186647,
+    "method": "qwen_baseline",
+    "n": 41,
+    "task_id": "36",
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.017399983081656557,
+    "mean_exec_time_ms": 102.68554980507712,
+    "mean_qop": 0.2622264990456313,
+    "mean_reward": 0.2586035463286978,
+    "mean_task_score": 0.5551441857000676,
+    "method": "qwen_online_grpo",
+    "n": 41,
+    "task_id": "20",
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.006445082909383149,
+    "mean_exec_time_ms": 104.04271243985106,
+    "mean_qop": 0.2832597150957283,
+    "mean_reward": 0.2753170242665353,
+    "mean_task_score": 0.5778876739304241,
+    "method": "qwen_online_grpo",
+    "n": 41,
+    "task_id": "21",
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.017398143907689005,
+    "mean_exec_time_ms": 102.6746958515993,
+    "mean_qop": 0.25853105756986505,
+    "mean_reward": 0.2549084878097411,
+    "mean_task_score": 0.5477500586974912,
+    "method": "qwen_online_grpo",
+    "n": 41,
+    "task_id": "31",
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.01741374512120441,
+    "mean_exec_time_ms": 102.76676705261556,
+    "mean_qop": 0.2641401236122449,
+    "mean_reward": 0.2605143053274597,
+    "mean_task_score": 0.558995709186647,
+    "method": "qwen_online_grpo",
+    "n": 41,
+    "task_id": "36",
+    "valid_rate": 1.0
+  }
+]

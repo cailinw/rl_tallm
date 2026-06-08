@@ -1,0 +1,5 @@
+policy,split,task_id,sample_id,valid,task_score,cost_price,exec_time,qop,reward,plan,error
+qwen_baseline,test,0,0,True,0.8106833349963369,0.13730769128630088,1.341346141078761,0.336687821855018,0.2025532077471419,"[""image_denoising"", [""input_of_query""], ""object_detection"", [""image_denoising""], ""image_super_resolution"", [""object_detection""]]",
+qwen_baseline,test,6,0,True,0.6422800070647428,0.12311133755765402,1.288891719470675,0.25958433475354437,0.13069516280647686,"[""image_deblurring"", [""input_of_query""], ""object_detection"", [""image_deblurring""]]",
+qwen_online_grpo,test,0,0,True,0.7064375665666414,0.06851198216166994,0.6063997770208743,0.3189627922024857,0.25832281450039823,"[""image_denoising"", [""input_of_query""], ""object_detection"", [""image_denoising""]]",
+qwen_online_grpo,test,6,0,True,0.5458026845372057,0.06904127105409222,0.7380158881761527,0.23838070674155676,0.16457911792394148,"[""image_deblurring"", [""input_of_query""]]",

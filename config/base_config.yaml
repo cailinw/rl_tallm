@@ -1,8 +1,15 @@
 model:
   name: "Qwen/Qwen2.5-7B-Instruct"
+  use_lora: true
   lora_r: 16
   lora_alpha: 32
-  load_in_4bit: false
+  lora_dropout: 0.05
+  lora_target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  torch_dtype: "bfloat16"
+  gradient_checkpointing: true
 
 training:
   w_latency: 0.3

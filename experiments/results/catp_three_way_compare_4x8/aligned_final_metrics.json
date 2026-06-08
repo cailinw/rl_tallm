@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "n_overlap": 4,
+    "overlap_examples": [
+      {
+        "sample_id": "3",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "12",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "15",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "27",
+        "task_id": "20"
+      }
+    ]
+  },
+  "summary": [
+    {
+      "mean_cost_price": 0.048275424492174285,
+      "mean_exec_time_ms": 703.868335776031,
+      "mean_qop": 0.24671438420835679,
+      "mean_reward": 0.19476545765483683,
+      "mean_task_score": 0.5785800069570541,
+      "method": "qwen_baseline",
+      "n": 4,
+      "valid_rate": 1.0
+    },
+    {
+      "mean_cost_price": 0.017129242811613387,
+      "mean_exec_time_ms": 101.0877647548914,
+      "mean_qop": 0.26982196435217126,
+      "mean_reward": 0.26625538589308007,
+      "mean_task_score": 0.5698575675487518,
+      "method": "qwen_online_grpo",
+      "n": 4,
+      "valid_rate": 1.0
+    },
+    {
+      "mean_cost_price": 2.0,
+      "mean_exec_time_ms": 0.0,
+      "mean_qop": -2.0,
+      "mean_reward": -1.0,
+      "mean_task_score": -2.0,
+      "method": "catp_llm_offline",
+      "n": 4,
+      "valid_rate": 0.0
+    }
+  ]
+}

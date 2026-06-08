@@ -1,0 +1,22 @@
+{
+  "alpha": 0.5,
+  "device": "cuda:0",
+  "dry_run": true,
+  "dtype": "bfloat16",
+  "group_size": 2,
+  "invalid_penalty": -1.0,
+  "latency_weight": 0.1,
+  "learning_rate": 5e-05,
+  "load_in_4bit": false,
+  "max_new_tokens": 192,
+  "max_tools": 5,
+  "model_name": "Qwen/Qwen2.5-3B-Instruct",
+  "n_eval": 3,
+  "n_train": 3,
+  "opencatp_root": "external/OpenCATP-LLM",
+  "output_dir": "experiments/results/catp_online_grpo_dryrun",
+  "policy_backend": "heuristic",
+  "seed": 42,
+  "train_steps": 3,
+  "use_lora": false
+}

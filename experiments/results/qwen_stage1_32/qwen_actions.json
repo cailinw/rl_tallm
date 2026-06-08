@@ -1,0 +1,1906 @@
+[
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 0,
+    "selected_tools": [
+      "getCityForecast",
+      "getCityAQIForecast"
+    ],
+    "raw_output": "{\"tools\": [\"getCityForecast\", \"getCityAQIForecast\", \"getCityShow\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 0,
+    "selected_tools": [
+      "getCityForecast",
+      "getCityAQIForecast"
+    ],
+    "raw_output": "{\"tools\": [\"getCityForecast\", \"getCityAQIForecast\", \"getShowDetail\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 1,
+    "selected_tools": [
+      "getParliamentDebates",
+      "getSchoolsAndUniversitiesInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParliamentDebates\", \"getSchoolsAndUniversitiesInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 1,
+    "selected_tools": [
+      "getParliamentDebates",
+      "getSchoolsAndUniversitiesInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParliamentDebates\", \"getSchoolsAndUniversitiesInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 2,
+    "selected_tools": [
+      "createTransaction",
+      "updateTransaction"
+    ],
+    "raw_output": "{\"tools\": [\"createTransaction\", \"updateTransaction\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 2,
+    "selected_tools": [
+      "getBudgets",
+      "createTransaction"
+    ],
+    "raw_output": "{\"tools\": [\"getBudgets\", \"createTransaction\", \"syncTransactions\", \"updateTransaction\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 3,
+    "selected_tools": [
+      "getDetailedInfoByIP",
+      "getLocationByIP"
+    ],
+    "raw_output": "{\"tools\": [\"getDetailedInfoByIP\", \"getLocationByIP\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 3,
+    "selected_tools": [
+      "getDetailedInfoByIP",
+      "getLocationByIP"
+    ],
+    "raw_output": "{\"tools\": [\"getDetailedInfoByIP\", \"getLocationByIP\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 4,
+    "selected_tools": [
+      "biometricLogin",
+      "userActivityReport"
+    ],
+    "raw_output": "{\"tools\": [\"biometricLogin\", \"userActivityReport\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 4,
+    "selected_tools": [
+      "biometricLogin",
+      "userActivityReport"
+    ],
+    "raw_output": "{\"tools\": [\"biometricLogin\", \"userActivityReport\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 5,
+    "selected_tools": [
+      "getRealtimeWeather",
+      "getAirportWeather"
+    ],
+    "raw_output": "{\"tools\": [\"getRealtimeWeather\", \"getAirportWeather\", \"getAirportDelays\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 5,
+    "selected_tools": [
+      "getRealtimeWeather",
+      "getAirportWeather"
+    ],
+    "raw_output": "{\"tools\": [\"getRealtimeWeather\", \"getAirportWeather\", \"getAirportDelays\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 6,
+    "selected_tools": [
+      "getItemInformation",
+      "performGameAction"
+    ],
+    "raw_output": "{\"tools\": [\"getItemInformation\", \"performGameAction\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 6,
+    "selected_tools": [
+      "getItemInformation",
+      "performGameAction"
+    ],
+    "raw_output": "{\"tools\": [\"getItemInformation\", \"performGameAction\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 7,
+    "selected_tools": [
+      "listCountries",
+      "getDivisionDetails"
+    ],
+    "raw_output": "{\"tools\": [\"listCountries\", \"getDivisionDetails\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 7,
+    "selected_tools": [
+      "getCountryDivisions",
+      "getDivisionDetails"
+    ],
+    "raw_output": "{\"tools\": [\"getCountryDivisions\", \"getDivisionDetails\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 8,
+    "selected_tools": [
+      "overlayDataOnMap",
+      "addCustomMarker"
+    ],
+    "raw_output": "{\"tools\": [\"overlayDataOnMap\", \"addCustomMarker\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 8,
+    "selected_tools": [
+      "overlayDataOnMap",
+      "addCustomMarker"
+    ],
+    "raw_output": "{\"tools\": [\"overlayDataOnMap\", \"addCustomMarker\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 9,
+    "selected_tools": [
+      "filterArticlesBySource",
+      "getArticleMetadata"
+    ],
+    "raw_output": "{\"tools\": [\"filterArticlesBySource\", \"getArticleMetadata\", \"getFullText\", \"getArticleByAuthor\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 9,
+    "selected_tools": [
+      "filterArticlesBySource",
+      "getArticleMetadata"
+    ],
+    "raw_output": "{\"tools\": [\"filterArticlesBySource\", \"getArticleMetadata\", \"getArticleByAuthor\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 10,
+    "selected_tools": [
+      "searchComponents",
+      "getPricingAndStock"
+    ],
+    "raw_output": "{\"tools\": [\"searchComponents\", \"getPricingAndStock\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 10,
+    "selected_tools": [
+      "searchComponents",
+      "getPricingAndStock"
+    ],
+    "raw_output": "{\"tools\": [\"searchComponents\", \"getPricingAndStock\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 11,
+    "selected_tools": [
+      "getHolidaysByCountryAndYear",
+      "getHolidayInformation"
+    ],
+    "raw_output": "{\"tools\": [\"getHolidaysByCountryAndYear\", \"getHolidayInformation\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 11,
+    "selected_tools": [
+      "getHolidaysByCountryAndYear",
+      "getHolidaysByCountriesAndYears"
+    ],
+    "raw_output": "{\"tools\": [\"getHolidaysByCountryAndYear\", \"getHolidaysByCountriesAndYears\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 12,
+    "selected_tools": [
+      "getEconomicData",
+      "downloadDataset"
+    ],
+    "raw_output": "{\"tools\": [\"getEconomicData\", \"downloadDataset\", \"getLatestUpdates\", \"SearchGermanGovDatasets\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 12,
+    "selected_tools": [
+      "searchDatasets",
+      "downloadDataset"
+    ],
+    "raw_output": "{\"tools\": [\"searchDatasets\", \"downloadDataset\", \"getLatestUpdates\", \"getStatistics\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 13,
+    "selected_tools": [
+      "getRankings",
+      "createPlaylist"
+    ],
+    "raw_output": "{\"tools\": [\"getRankings\", \"createPlaylist\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 13,
+    "selected_tools": [
+      "getRankings",
+      "createPlaylist"
+    ],
+    "raw_output": "{\"tools\": [\"getRankings\", \"createPlaylist\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 14,
+    "selected_tools": [
+      "echoPost"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 14,
+    "selected_tools": [
+      "echoPost"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 15,
+    "selected_tools": [
+      "generateGrayscale",
+      "getComplementaryColor"
+    ],
+    "raw_output": "{\"tools\": [\"generateGrayscale\", \"getComplementaryColor\", \"calculateContrast\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 15,
+    "selected_tools": [
+      "generateGrayscale",
+      "getComplementaryColor"
+    ],
+    "raw_output": "{\"tools\": [\"generateGrayscale\", \"getComplementaryColor\", \"calculateContrast\", \"convertColor\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 16,
+    "selected_tools": [
+      "streamTweets",
+      "searchTweets"
+    ],
+    "raw_output": "{\"tools\": [\"streamTweets\", \"searchTweets\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 16,
+    "selected_tools": [
+      "streamTweets"
+    ],
+    "raw_output": "{\"tools\": [\"streamTweets\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 17,
+    "selected_tools": [
+      "echoPost",
+      "echoStatus"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\", \"echoStatus\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 17,
+    "selected_tools": [
+      "echoPost"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\", \"echoPost\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 18,
+    "selected_tools": [
+      "listShortLinks",
+      "modifyShortLinks"
+    ],
+    "raw_output": "{\"tools\": [\"listShortLinks\", \"modifyShortLinks\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 18,
+    "selected_tools": [
+      "listShortLinks",
+      "modifyShortLinks"
+    ],
+    "raw_output": "{\"tools\": [\"listShortLinks\", \"modifyShortLinks\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 19,
+    "selected_tools": [
+      "getRealtimeData",
+      "get24hSeriesData"
+    ],
+    "raw_output": "{\"tools\": [\"getRealtimeData\", \"get24hSeriesData\", \"getOrderBookData\", \"normalizeMarketData\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 19,
+    "selected_tools": [
+      "get24hSeriesData",
+      "normalizeMarketData"
+    ],
+    "raw_output": "{\"tools\": [\"get24hSeriesData\", \"normalizeMarketData\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 20,
+    "selected_tools": [
+      "getGlobalStats",
+      "getCountryData"
+    ],
+    "raw_output": "{\"tools\": [\"getGlobalStats\", \"getCountryData\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 20,
+    "selected_tools": [
+      "getGlobalStats",
+      "getCountryData"
+    ],
+    "raw_output": "{\"tools\": [\"getGlobalStats\", \"getCountryData\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 21,
+    "selected_tools": [
+      "getEconomicIndicators",
+      "searchTimeSeries"
+    ],
+    "raw_output": "{\"tools\": [\"getEconomicIndicators\", \"searchTimeSeries\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 21,
+    "selected_tools": [
+      "getEconomicIndicators"
+    ],
+    "raw_output": "{\"tools\": [\"getEconomicIndicators\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 22,
+    "selected_tools": [
+      "getCurrentLiturgicalCalendar",
+      "searchLiturgicalEventsDetails"
+    ],
+    "raw_output": "{\"tools\": [\"getCurrentLiturgicalCalendar\", \"searchLiturgicalEventsDetails\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 22,
+    "selected_tools": [
+      "searchLiturgicalEvents",
+      "searchLiturgicalEventsDetails"
+    ],
+    "raw_output": "{\"tools\": [\"searchLiturgicalEvents\", \"searchLiturgicalEventsDetails\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 23,
+    "selected_tools": [
+      "retrieveArtistInfo",
+      "getAlbumInfo"
+    ],
+    "raw_output": "{\"tools\": [\"retrieveArtistInfo\", \"getAlbumInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 23,
+    "selected_tools": [
+      "retrieveArtistInfo",
+      "getAlbumInfo"
+    ],
+    "raw_output": "{\"tools\": [\"retrieveArtistInfo\", \"getAlbumInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 24,
+    "selected_tools": [
+      "getHeadlines",
+      "searchArticles"
+    ],
+    "raw_output": "{\"tools\": [\"getHeadlines\", \"searchArticles\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 24,
+    "selected_tools": [
+      "getHeadlines",
+      "searchArticles"
+    ],
+    "raw_output": "{\"tools\": [\"getHeadlines\", \"searchArticles\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 25,
+    "selected_tools": [
+      "searchBooks",
+      "getBookCatalog"
+    ],
+    "raw_output": "{\"tools\": [\"searchBooks\", \"getBookCatalog\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 25,
+    "selected_tools": [
+      "searchBooks",
+      "getBookByAuthor"
+    ],
+    "raw_output": "{\"tools\": [\"searchBooks\", \"getBookByAuthor\", \"getBookByCat\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 26,
+    "selected_tools": [
+      "getOrderDetails",
+      "processPayment"
+    ],
+    "raw_output": "{\"tools\": [\"getOrderDetails\", \"processPayment\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 26,
+    "selected_tools": [
+      "getOrderDetails",
+      "getStoreInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getOrderDetails\", \"getStoreInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 27,
+    "selected_tools": [
+      "getParkingInfo",
+      "getTransportInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParkingInfo\", \"getTransportInfo\", \"getAirportShops\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 27,
+    "selected_tools": [
+      "getParkingInfo",
+      "getTransportInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParkingInfo\", \"getTransportInfo\", \"getAirportShops\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 28,
+    "selected_tools": [
+      "getHistoricalPrice",
+      "getRealTimePrice"
+    ],
+    "raw_output": "{\"tools\": [\"getHistoricalPrice\", \"getRealTimePrice\", \"getAccountInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 28,
+    "selected_tools": [
+      "getHistoricalPrice",
+      "getRealTimePrice"
+    ],
+    "raw_output": "{\"tools\": [\"getHistoricalPrice\", \"getRealTimePrice\", \"getAccountInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 29,
+    "selected_tools": [
+      "getWordPronunciation",
+      "getWordSynonyms"
+    ],
+    "raw_output": "{\"tools\": [\"getWordPronunciation\", \"getWordSynonyms\", \"getWordDefinition\", \"getWordExamples\", \"getWordAntonyms\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 29,
+    "selected_tools": [
+      "getWordPronunciation",
+      "getWordSynonyms"
+    ],
+    "raw_output": "{\"tools\": [\"getWordPronunciation\", \"getWordSynonyms\", \"getWordDefinition\", \"getWordExamples\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 30,
+    "selected_tools": [
+      "addQuote",
+      "getQuotesByAuthor"
+    ],
+    "raw_output": "{\"tools\": [\"addQuote\", \"getQuotesByAuthor\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 30,
+    "selected_tools": [
+      "addQuote",
+      "getQuotesByTag"
+    ],
+    "raw_output": "{\"tools\": [\"addQuote\", \"getQuotesByTag\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "normal",
+    "task_idx": 31,
+    "selected_tools": [
+      "getPlayerStats",
+      "getTeamRankings"
+    ],
+    "raw_output": "{\"tools\": [\"getPlayerStats\", \"getTeamRankings\", \"getPlayerInfo\", \"getTeamRankings\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "normal",
+    "task_idx": 31,
+    "selected_tools": [
+      "getPlayerStats",
+      "getTeamRankings"
+    ],
+    "raw_output": "{\"tools\": [\"getPlayerStats\", \"getTeamRankings\", \"getCurrentPlayerRoster\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 0,
+    "selected_tools": [
+      "getCityForecast",
+      "getCityAQIForecast"
+    ],
+    "raw_output": "{\"tools\": [\"getCityForecast\", \"getCityAQIForecast\", \"getCityShow\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 0,
+    "selected_tools": [
+      "getCityForecast",
+      "getCityAQIForecast"
+    ],
+    "raw_output": "{\"tools\": [\"getCityForecast\", \"getCityAQIForecast\", \"getShowDetail\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 1,
+    "selected_tools": [
+      "getParliamentDebates",
+      "getSchoolsAndUniversitiesInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParliamentDebates\", \"getSchoolsAndUniversitiesInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 1,
+    "selected_tools": [
+      "getParliamentDebates",
+      "getSchoolsAndUniversitiesInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParliamentDebates\", \"getSchoolsAndUniversitiesInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 2,
+    "selected_tools": [
+      "createTransaction",
+      "updateTransaction"
+    ],
+    "raw_output": "{\"tools\": [\"createTransaction\", \"updateTransaction\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 2,
+    "selected_tools": [
+      "getBudgets",
+      "createTransaction"
+    ],
+    "raw_output": "{\"tools\": [\"getBudgets\", \"createTransaction\", \"syncTransactions\", \"updateTransaction\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 3,
+    "selected_tools": [
+      "getDetailedInfoByIP",
+      "getLocationByIP"
+    ],
+    "raw_output": "{\"tools\": [\"getDetailedInfoByIP\", \"getLocationByIP\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 3,
+    "selected_tools": [
+      "getDetailedInfoByIP",
+      "getLocationByIP"
+    ],
+    "raw_output": "{\"tools\": [\"getDetailedInfoByIP\", \"getLocationByIP\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 4,
+    "selected_tools": [
+      "biometricLogin",
+      "userActivityReport"
+    ],
+    "raw_output": "{\"tools\": [\"biometricLogin\", \"userActivityReport\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 4,
+    "selected_tools": [
+      "biometricLogin",
+      "userActivityReport"
+    ],
+    "raw_output": "{\"tools\": [\"biometricLogin\", \"userActivityReport\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 5,
+    "selected_tools": [
+      "getRealtimeWeather",
+      "getAirportWeather"
+    ],
+    "raw_output": "{\"tools\": [\"getRealtimeWeather\", \"getAirportWeather\", \"getAirportDelays\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 5,
+    "selected_tools": [
+      "getRealtimeWeather",
+      "getAirportWeather"
+    ],
+    "raw_output": "{\"tools\": [\"getRealtimeWeather\", \"getAirportWeather\", \"getAirportDelays\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 6,
+    "selected_tools": [
+      "getItemInformation",
+      "performGameAction"
+    ],
+    "raw_output": "{\"tools\": [\"getItemInformation\", \"performGameAction\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 6,
+    "selected_tools": [
+      "getItemInformation",
+      "performGameAction"
+    ],
+    "raw_output": "{\"tools\": [\"getItemInformation\", \"performGameAction\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 7,
+    "selected_tools": [
+      "listCountries",
+      "getDivisionDetails"
+    ],
+    "raw_output": "{\"tools\": [\"listCountries\", \"getDivisionDetails\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 7,
+    "selected_tools": [
+      "getCountryDivisions",
+      "getDivisionDetails"
+    ],
+    "raw_output": "{\"tools\": [\"getCountryDivisions\", \"getDivisionDetails\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 8,
+    "selected_tools": [
+      "overlayDataOnMap",
+      "addCustomMarker"
+    ],
+    "raw_output": "{\"tools\": [\"overlayDataOnMap\", \"addCustomMarker\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 8,
+    "selected_tools": [
+      "overlayDataOnMap",
+      "addCustomMarker"
+    ],
+    "raw_output": "{\"tools\": [\"overlayDataOnMap\", \"addCustomMarker\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 9,
+    "selected_tools": [
+      "filterArticlesBySource",
+      "getArticleMetadata"
+    ],
+    "raw_output": "{\"tools\": [\"filterArticlesBySource\", \"getArticleMetadata\", \"getFullText\", \"getArticleByAuthor\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 9,
+    "selected_tools": [
+      "filterArticlesBySource",
+      "getArticleMetadata"
+    ],
+    "raw_output": "{\"tools\": [\"filterArticlesBySource\", \"getArticleMetadata\", \"getFullText\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 10,
+    "selected_tools": [
+      "searchComponents",
+      "getPricingAndStock"
+    ],
+    "raw_output": "{\"tools\": [\"searchComponents\", \"getPricingAndStock\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 10,
+    "selected_tools": [
+      "searchComponents",
+      "getPricingAndStock"
+    ],
+    "raw_output": "{\"tools\": [\"searchComponents\", \"getPricingAndStock\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 11,
+    "selected_tools": [
+      "getHolidaysByCountryAndYear",
+      "getHolidayInformation"
+    ],
+    "raw_output": "{\"tools\": [\"getHolidaysByCountryAndYear\", \"getHolidayInformation\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 11,
+    "selected_tools": [
+      "getHolidaysByCountryAndYear",
+      "getHolidaysByCountriesAndYears"
+    ],
+    "raw_output": "{\"tools\": [\"getHolidaysByCountryAndYear\", \"getHolidaysByCountriesAndYears\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 12,
+    "selected_tools": [
+      "getEconomicData",
+      "downloadDataset"
+    ],
+    "raw_output": "{\"tools\": [\"getEconomicData\", \"downloadDataset\", \"getLatestUpdates\", \"SearchGermanGovDatasets\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 12,
+    "selected_tools": [
+      "searchDatasets",
+      "downloadDataset"
+    ],
+    "raw_output": "{\"tools\": [\"searchDatasets\", \"downloadDataset\", \"getLatestUpdates\", \"SearchGermanGovDatasets\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 13,
+    "selected_tools": [
+      "getRankings",
+      "createPlaylist"
+    ],
+    "raw_output": "{\"tools\": [\"getRankings\", \"createPlaylist\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 13,
+    "selected_tools": [
+      "getRankings",
+      "getArtistInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getRankings\", \"getArtistInfo\", \"createPlaylist\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 14,
+    "selected_tools": [
+      "echoPost"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 14,
+    "selected_tools": [
+      "echoPost"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 15,
+    "selected_tools": [
+      "generateGrayscale",
+      "getComplementaryColor"
+    ],
+    "raw_output": "{\"tools\": [\"generateGrayscale\", \"getComplementaryColor\", \"calculateContrast\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 15,
+    "selected_tools": [
+      "generateGrayscale",
+      "getComplementaryColor"
+    ],
+    "raw_output": "{\"tools\": [\"generateGrayscale\", \"getComplementaryColor\", \"calculateContrast\", \"convertColor\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 16,
+    "selected_tools": [
+      "streamTweets",
+      "searchTweets"
+    ],
+    "raw_output": "{\"tools\": [\"streamTweets\", \"searchTweets\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 16,
+    "selected_tools": [
+      "streamTweets"
+    ],
+    "raw_output": "{\"tools\": [\"streamTweets\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 17,
+    "selected_tools": [
+      "echoPost",
+      "echoStatus"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\", \"echoStatus\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 17,
+    "selected_tools": [
+      "echoPost"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\", \"echoPost\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 18,
+    "selected_tools": [
+      "listShortLinks",
+      "modifyShortLinks"
+    ],
+    "raw_output": "{\"tools\": [\"listShortLinks\", \"modifyShortLinks\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 18,
+    "selected_tools": [
+      "listShortLinks",
+      "modifyShortLinks"
+    ],
+    "raw_output": "{\"tools\": [\"listShortLinks\", \"modifyShortLinks\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 19,
+    "selected_tools": [
+      "getRealtimeData",
+      "get24hSeriesData"
+    ],
+    "raw_output": "{\"tools\": [\"getRealtimeData\", \"get24hSeriesData\", \"getOrderBookData\", \"normalizeMarketData\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 19,
+    "selected_tools": [
+      "get24hSeriesData",
+      "normalizeMarketData"
+    ],
+    "raw_output": "{\"tools\": [\"get24hSeriesData\", \"normalizeMarketData\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 20,
+    "selected_tools": [
+      "getGlobalStats",
+      "getCountryData"
+    ],
+    "raw_output": "{\"tools\": [\"getGlobalStats\", \"getCountryData\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 20,
+    "selected_tools": [
+      "getGlobalStats",
+      "getCountryData"
+    ],
+    "raw_output": "{\"tools\": [\"getGlobalStats\", \"getCountryData\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 21,
+    "selected_tools": [
+      "getEconomicIndicators",
+      "searchTimeSeries"
+    ],
+    "raw_output": "{\"tools\": [\"getEconomicIndicators\", \"searchTimeSeries\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 21,
+    "selected_tools": [
+      "getEconomicIndicators"
+    ],
+    "raw_output": "{\"tools\": [\"getEconomicIndicators\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 22,
+    "selected_tools": [
+      "getCurrentLiturgicalCalendar",
+      "searchLiturgicalEventsDetails"
+    ],
+    "raw_output": "{\"tools\": [\"getCurrentLiturgicalCalendar\", \"searchLiturgicalEventsDetails\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 22,
+    "selected_tools": [
+      "searchLiturgicalEvents",
+      "searchLiturgicalEventsDetails"
+    ],
+    "raw_output": "{\"tools\": [\"searchLiturgicalEvents\", \"searchLiturgicalEventsDetails\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 23,
+    "selected_tools": [
+      "retrieveArtistInfo",
+      "getAlbumInfo"
+    ],
+    "raw_output": "{\"tools\": [\"retrieveArtistInfo\", \"getAlbumInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 23,
+    "selected_tools": [
+      "retrieveArtistInfo",
+      "getAlbumInfo"
+    ],
+    "raw_output": "{\"tools\": [\"retrieveArtistInfo\", \"getAlbumInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 24,
+    "selected_tools": [
+      "getHeadlines",
+      "searchArticles"
+    ],
+    "raw_output": "{\"tools\": [\"getHeadlines\", \"searchArticles\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 24,
+    "selected_tools": [
+      "getHeadlines",
+      "searchArticles"
+    ],
+    "raw_output": "{\"tools\": [\"getHeadlines\", \"searchArticles\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 25,
+    "selected_tools": [
+      "searchBooks",
+      "getBookCatalog"
+    ],
+    "raw_output": "{\"tools\": [\"searchBooks\", \"getBookCatalog\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 25,
+    "selected_tools": [
+      "searchBooks",
+      "getBookByAuthor"
+    ],
+    "raw_output": "{\"tools\": [\"searchBooks\", \"getBookByAuthor\", \"getBookByCat\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 26,
+    "selected_tools": [
+      "getOrderDetails",
+      "processPayment"
+    ],
+    "raw_output": "{\"tools\": [\"getOrderDetails\", \"processPayment\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 26,
+    "selected_tools": [
+      "getOrderDetails",
+      "getStoreInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getOrderDetails\", \"getStoreInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 27,
+    "selected_tools": [
+      "getParkingInfo",
+      "getTransportInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParkingInfo\", \"getTransportInfo\", \"getAirportShops\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 27,
+    "selected_tools": [
+      "getParkingInfo",
+      "getTransportInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParkingInfo\", \"getTransportInfo\", \"getAirportShops\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 28,
+    "selected_tools": [
+      "getHistoricalPrice",
+      "getRealTimePrice"
+    ],
+    "raw_output": "{\"tools\": [\"getHistoricalPrice\", \"getRealTimePrice\", \"getAccountInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 28,
+    "selected_tools": [
+      "getHistoricalPrice",
+      "getRealTimePrice"
+    ],
+    "raw_output": "{\"tools\": [\"getHistoricalPrice\", \"getRealTimePrice\", \"getAccountInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 29,
+    "selected_tools": [
+      "getWordPronunciation",
+      "getWordSynonyms"
+    ],
+    "raw_output": "{\"tools\": [\"getWordPronunciation\", \"getWordSynonyms\", \"getWordDefinition\", \"getWordExamples\", \"getWordAntonyms\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 29,
+    "selected_tools": [
+      "getWordPronunciation",
+      "getWordSynonyms"
+    ],
+    "raw_output": "{\"tools\": [\"getWordPronunciation\", \"getWordSynonyms\", \"getWordDefinition\", \"getWordExamples\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 30,
+    "selected_tools": [
+      "addQuote",
+      "getQuotesByAuthor"
+    ],
+    "raw_output": "{\"tools\": [\"addQuote\", \"getQuotesByAuthor\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 30,
+    "selected_tools": [
+      "addQuote",
+      "getQuotesByTag"
+    ],
+    "raw_output": "{\"tools\": [\"addQuote\", \"getQuotesByTag\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_2x",
+    "task_idx": 31,
+    "selected_tools": [
+      "getPlayerStats",
+      "getTeamRankings"
+    ],
+    "raw_output": "{\"tools\": [\"getPlayerStats\", \"getTeamRankings\", \"getPlayerInfo\", \"getTeamRankings\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_2x",
+    "task_idx": 31,
+    "selected_tools": [
+      "getPlayerStats",
+      "getTeamRankings"
+    ],
+    "raw_output": "{\"tools\": [\"getPlayerStats\", \"getTeamRankings\", \"getCurrentPlayerRoster\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 0,
+    "selected_tools": [
+      "getCityForecast",
+      "getCityAQIForecast"
+    ],
+    "raw_output": "{\"tools\": [\"getCityForecast\", \"getCityAQIForecast\", \"getCityShow\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 0,
+    "selected_tools": [
+      "getCityForecast",
+      "getCityAQIForecast"
+    ],
+    "raw_output": "{\"tools\": [\"getCityForecast\", \"getCityAQIForecast\", \"getShowDetail\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 1,
+    "selected_tools": [
+      "getParliamentDebates",
+      "getSchoolsAndUniversitiesInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParliamentDebates\", \"getSchoolsAndUniversitiesInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 1,
+    "selected_tools": [
+      "getParliamentDebates",
+      "getSchoolsAndUniversitiesInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParliamentDebates\", \"getSchoolsAndUniversitiesInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 2,
+    "selected_tools": [
+      "createTransaction",
+      "updateTransaction"
+    ],
+    "raw_output": "{\"tools\": [\"createTransaction\", \"updateTransaction\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 2,
+    "selected_tools": [
+      "getBudgets",
+      "createTransaction"
+    ],
+    "raw_output": "{\"tools\": [\"getBudgets\", \"createTransaction\", \"syncTransactions\", \"updateTransaction\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 3,
+    "selected_tools": [
+      "getDetailedInfoByIP",
+      "getLocationByIP"
+    ],
+    "raw_output": "{\"tools\": [\"getDetailedInfoByIP\", \"getLocationByIP\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 3,
+    "selected_tools": [
+      "getDetailedInfoByIP",
+      "getLocationByIP"
+    ],
+    "raw_output": "{\"tools\": [\"getDetailedInfoByIP\", \"getLocationByIP\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 4,
+    "selected_tools": [
+      "biometricLogin",
+      "userActivityReport"
+    ],
+    "raw_output": "{\"tools\": [\"biometricLogin\", \"userActivityReport\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 4,
+    "selected_tools": [
+      "biometricLogin",
+      "userActivityReport"
+    ],
+    "raw_output": "{\"tools\": [\"biometricLogin\", \"userActivityReport\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 5,
+    "selected_tools": [
+      "getRealtimeWeather",
+      "getAirportWeather"
+    ],
+    "raw_output": "{\"tools\": [\"getRealtimeWeather\", \"getAirportWeather\", \"getAirportDelays\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 5,
+    "selected_tools": [
+      "getRealtimeWeather",
+      "getAirportWeather"
+    ],
+    "raw_output": "{\"tools\": [\"getRealtimeWeather\", \"getAirportWeather\", \"getAirportDelays\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 6,
+    "selected_tools": [
+      "getItemInformation",
+      "performGameAction"
+    ],
+    "raw_output": "{\"tools\": [\"getItemInformation\", \"performGameAction\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 6,
+    "selected_tools": [
+      "getItemInformation",
+      "performGameAction"
+    ],
+    "raw_output": "{\"tools\": [\"getItemInformation\", \"performGameAction\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 7,
+    "selected_tools": [
+      "listCountries",
+      "getDivisionDetails"
+    ],
+    "raw_output": "{\"tools\": [\"listCountries\", \"getDivisionDetails\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 7,
+    "selected_tools": [
+      "getCountryDivisions",
+      "getDivisionDetails"
+    ],
+    "raw_output": "{\"tools\": [\"getCountryDivisions\", \"getDivisionDetails\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 8,
+    "selected_tools": [
+      "overlayDataOnMap",
+      "addCustomMarker"
+    ],
+    "raw_output": "{\"tools\": [\"overlayDataOnMap\", \"addCustomMarker\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 8,
+    "selected_tools": [
+      "overlayDataOnMap",
+      "addCustomMarker"
+    ],
+    "raw_output": "{\"tools\": [\"overlayDataOnMap\", \"addCustomMarker\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 9,
+    "selected_tools": [
+      "filterArticlesBySource",
+      "getArticleMetadata"
+    ],
+    "raw_output": "{\"tools\": [\"filterArticlesBySource\", \"getArticleMetadata\", \"getFullText\", \"getArticleByAuthor\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 9,
+    "selected_tools": [
+      "filterArticlesBySource",
+      "getArticleMetadata"
+    ],
+    "raw_output": "{\"tools\": [\"filterArticlesBySource\", \"getArticleMetadata\", \"getArticleByAuthor\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 10,
+    "selected_tools": [
+      "searchComponents",
+      "getPricingAndStock"
+    ],
+    "raw_output": "{\"tools\": [\"searchComponents\", \"getPricingAndStock\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 10,
+    "selected_tools": [
+      "searchComponents",
+      "getPricingAndStock"
+    ],
+    "raw_output": "{\"tools\": [\"searchComponents\", \"getPricingAndStock\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 11,
+    "selected_tools": [
+      "getHolidaysByCountryAndYear",
+      "getHolidayInformation"
+    ],
+    "raw_output": "{\"tools\": [\"getHolidaysByCountryAndYear\", \"getHolidayInformation\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 11,
+    "selected_tools": [
+      "getHolidaysByCountryAndYear"
+    ],
+    "raw_output": "{\"tools\": [\"getHolidaysByCountryAndYear\", \"getHolidaysByYears\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 12,
+    "selected_tools": [
+      "getEconomicData",
+      "downloadDataset"
+    ],
+    "raw_output": "{\"tools\": [\"getEconomicData\", \"downloadDataset\", \"getLatestUpdates\", \"SearchGermanGovDatasets\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 12,
+    "selected_tools": [
+      "searchDatasets",
+      "downloadDataset"
+    ],
+    "raw_output": "{\"tools\": [\"searchDatasets\", \"downloadDataset\", \"getLatestUpdates\", \"getStatistics\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 13,
+    "selected_tools": [
+      "getRankings",
+      "createPlaylist"
+    ],
+    "raw_output": "{\"tools\": [\"getRankings\", \"createPlaylist\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 13,
+    "selected_tools": [
+      "getRankings",
+      "createPlaylist"
+    ],
+    "raw_output": "{\"tools\": [\"getRankings\", \"createPlaylist\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 14,
+    "selected_tools": [
+      "echoPost"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 14,
+    "selected_tools": [
+      "echoPost"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 15,
+    "selected_tools": [
+      "generateGrayscale",
+      "getComplementaryColor"
+    ],
+    "raw_output": "{\"tools\": [\"generateGrayscale\", \"getComplementaryColor\", \"calculateContrast\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 15,
+    "selected_tools": [
+      "generateGrayscale",
+      "getComplementaryColor"
+    ],
+    "raw_output": "{\"tools\": [\"generateGrayscale\", \"getComplementaryColor\", \"calculateContrast\", \"convertColor\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 16,
+    "selected_tools": [
+      "streamTweets",
+      "searchTweets"
+    ],
+    "raw_output": "{\"tools\": [\"streamTweets\", \"searchTweets\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 16,
+    "selected_tools": [
+      "streamTweets"
+    ],
+    "raw_output": "{\"tools\": [\"streamTweets\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 17,
+    "selected_tools": [
+      "echoPost",
+      "echoStatus"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\", \"echoStatus\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 17,
+    "selected_tools": [
+      "echoPost"
+    ],
+    "raw_output": "{\"tools\": [\"echoPost\", \"echoPost\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 18,
+    "selected_tools": [
+      "listShortLinks",
+      "modifyShortLinks"
+    ],
+    "raw_output": "{\"tools\": [\"listShortLinks\", \"modifyShortLinks\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 18,
+    "selected_tools": [
+      "listShortLinks",
+      "modifyShortLinks"
+    ],
+    "raw_output": "{\"tools\": [\"listShortLinks\", \"modifyShortLinks\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 19,
+    "selected_tools": [
+      "getRealtimeData",
+      "get24hSeriesData"
+    ],
+    "raw_output": "{\"tools\": [\"getRealtimeData\", \"get24hSeriesData\", \"getOrderBookData\", \"normalizeMarketData\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 19,
+    "selected_tools": [
+      "get24hSeriesData",
+      "normalizeMarketData"
+    ],
+    "raw_output": "{\"tools\": [\"get24hSeriesData\", \"normalizeMarketData\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 20,
+    "selected_tools": [
+      "getGlobalStats",
+      "getCountryData"
+    ],
+    "raw_output": "{\"tools\": [\"getGlobalStats\", \"getCountryData\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 20,
+    "selected_tools": [
+      "getGlobalStats",
+      "getCountryData"
+    ],
+    "raw_output": "{\"tools\": [\"getGlobalStats\", \"getCountryData\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 21,
+    "selected_tools": [
+      "getEconomicIndicators",
+      "searchTimeSeries"
+    ],
+    "raw_output": "{\"tools\": [\"getEconomicIndicators\", \"searchTimeSeries\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 21,
+    "selected_tools": [
+      "getEconomicIndicators"
+    ],
+    "raw_output": "{\"tools\": [\"getEconomicIndicators\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 22,
+    "selected_tools": [
+      "getCurrentLiturgicalCalendar",
+      "searchLiturgicalEventsDetails"
+    ],
+    "raw_output": "{\"tools\": [\"getCurrentLiturgicalCalendar\", \"searchLiturgicalEventsDetails\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 22,
+    "selected_tools": [
+      "searchLiturgicalEvents",
+      "searchLiturgicalEventsDetails"
+    ],
+    "raw_output": "{\"tools\": [\"searchLiturgicalEvents\", \"searchLiturgicalEventsDetails\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 23,
+    "selected_tools": [
+      "retrieveArtistInfo",
+      "getAlbumInfo"
+    ],
+    "raw_output": "{\"tools\": [\"retrieveArtistInfo\", \"getAlbumInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 23,
+    "selected_tools": [
+      "retrieveArtistInfo",
+      "getAlbumInfo"
+    ],
+    "raw_output": "{\"tools\": [\"retrieveArtistInfo\", \"getAlbumInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 24,
+    "selected_tools": [
+      "getHeadlines",
+      "searchArticles"
+    ],
+    "raw_output": "{\"tools\": [\"getHeadlines\", \"searchArticles\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 24,
+    "selected_tools": [
+      "getHeadlines",
+      "searchArticles"
+    ],
+    "raw_output": "{\"tools\": [\"getHeadlines\", \"searchArticles\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 25,
+    "selected_tools": [
+      "searchBooks",
+      "getBookCatalog"
+    ],
+    "raw_output": "{\"tools\": [\"searchBooks\", \"getBookCatalog\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 25,
+    "selected_tools": [
+      "searchBooks",
+      "getBookByAuthor"
+    ],
+    "raw_output": "{\"tools\": [\"searchBooks\", \"getBookByAuthor\", \"getBookByCat\", \"manageBookshelf\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 26,
+    "selected_tools": [
+      "getOrderDetails",
+      "processPayment"
+    ],
+    "raw_output": "{\"tools\": [\"getOrderDetails\", \"processPayment\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 26,
+    "selected_tools": [
+      "getOrderDetails",
+      "getStoreInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getOrderDetails\", \"getStoreInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 27,
+    "selected_tools": [
+      "getParkingInfo",
+      "getTransportInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParkingInfo\", \"getTransportInfo\", \"getAirportShops\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 27,
+    "selected_tools": [
+      "getParkingInfo",
+      "getTransportInfo"
+    ],
+    "raw_output": "{\"tools\": [\"getParkingInfo\", \"getTransportInfo\", \"getAirportShops\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 28,
+    "selected_tools": [
+      "getHistoricalPrice",
+      "getRealTimePrice"
+    ],
+    "raw_output": "{\"tools\": [\"getHistoricalPrice\", \"getRealTimePrice\", \"getAccountInfo\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 28,
+    "selected_tools": [
+      "getHistoricalPrice",
+      "getRealTimePrice"
+    ],
+    "raw_output": "{\"tools\": [\"getHistoricalPrice\", \"getRealTimePrice\", \"getAccountInfo\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 29,
+    "selected_tools": [
+      "getWordPronunciation",
+      "getWordSynonyms"
+    ],
+    "raw_output": "{\"tools\": [\"getWordPronunciation\", \"getWordSynonyms\", \"getWordDefinition\", \"getWordExamples\", \"getWordAntonyms\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 29,
+    "selected_tools": [
+      "getWordPronunciation",
+      "getWordSynonyms"
+    ],
+    "raw_output": "{\"tools\": [\"getWordPronunciation\", \"getWordSynonyms\", \"getWordDefinition\", \"getWordExamples\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 30,
+    "selected_tools": [
+      "addQuote",
+      "getQuotesByAuthor"
+    ],
+    "raw_output": "{\"tools\": [\"addQuote\", \"getQuotesByAuthor\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 30,
+    "selected_tools": [
+      "addQuote",
+      "getQuotesByTag"
+    ],
+    "raw_output": "{\"tools\": [\"addQuote\", \"getQuotesByTag\"]}"
+  },
+  {
+    "policy": "qwen_no_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 31,
+    "selected_tools": [
+      "getPlayerStats",
+      "getTeamRankings"
+    ],
+    "raw_output": "{\"tools\": [\"getPlayerStats\", \"getTeamRankings\", \"getPlayerInfo\", \"getTeamRankings\"]}"
+  },
+  {
+    "policy": "qwen_latency",
+    "condition": "degraded_5x_timeout",
+    "task_idx": 31,
+    "selected_tools": [
+      "getPlayerStats",
+      "getTeamRankings"
+    ],
+    "raw_output": "{\"tools\": [\"getPlayerStats\", \"getTeamRankings\", \"getCurrentPlayerRoster\"]}"
+  }
+]

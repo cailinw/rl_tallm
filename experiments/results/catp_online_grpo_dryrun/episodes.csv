@@ -1,0 +1,7 @@
+policy,split,task_id,sample_id,valid,task_score,cost_price,exec_time,qop,reward,plan,error
+qwen_baseline,test,0,0,True,0.8106833349963369,0.13730769128630088,1.341346141078761,0.336687821855018,0.2025532077471419,"[""image_denoising"", [""input_of_query""], ""object_detection"", [""image_denoising""], ""image_super_resolution"", [""object_detection""]]",
+qwen_baseline,test,6,0,True,0.6422800070647428,0.12311133755765402,1.288891719470675,0.25958433475354437,0.13069516280647686,"[""image_deblurring"", [""input_of_query""], ""object_detection"", [""image_deblurring""]]",
+qwen_baseline,test,8,0,True,0.6741178035410031,0.01444191565810815,0.055523945726351866,0.3298379439414475,0.3242855493688123,"[""image_denoising"", [""input_of_query""]]",
+qwen_online_grpo,test,0,0,True,0.5587573295922799,0.054070066503561796,0.5508758312945224,0.252343631544359,0.19725604841490676,"[""object_detection"", [""input_of_query""]]",
+qwen_online_grpo,test,6,0,True,0.8063651199779789,0.1522788958368313,1.5284861979603912,0.3270431120705738,0.17419449227453465,"[""image_denoising"", [""input_of_query""], ""image_deblurring"", [""image_denoising""], ""image_super_resolution"", [""image_deblurring""]]",
+qwen_online_grpo,test,8,0,True,0.8286400083531648,0.1299854610208694,1.2498182627608672,0.3493272736661477,0.22434544739006096,"[""object_detection"", [""input_of_query""], ""image_captioning"", [""object_detection""], ""image_denoising"", [""image_captioning""]]",
