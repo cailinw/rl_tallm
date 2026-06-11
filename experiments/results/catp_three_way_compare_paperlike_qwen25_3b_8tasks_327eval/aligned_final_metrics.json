@@ -1,0 +1,1339 @@
+{
+  "metadata": {
+    "n_overlap": 325,
+    "overlap_examples": [
+      {
+        "sample_id": "0",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "1",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "3",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "7",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "12",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "15",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "17",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "19",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "25",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "26",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "27",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "29",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "31",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "33",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "34",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "37",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "40",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "41",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "44",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "45",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "48",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "52",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "53",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "54",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "57",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "58",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "61",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "64",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "73",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "75",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "76",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "79",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "80",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "85",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "87",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "88",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "90",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "91",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "94",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "97",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "98",
+        "task_id": "13"
+      },
+      {
+        "sample_id": "1",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "3",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "4",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "6",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "7",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "10",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "12",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "14",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "15",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "17",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "20",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "27",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "31",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "33",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "34",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "37",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "40",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "41",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "43",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "44",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "45",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "49",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "52",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "54",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "56",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "57",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "61",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "64",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "66",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "68",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "72",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "76",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "80",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "84",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "85",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "87",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "89",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "91",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "93",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "94",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "98",
+        "task_id": "20"
+      },
+      {
+        "sample_id": "1",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "2",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "3",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "7",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "11",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "12",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "15",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "17",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "20",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "21",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "27",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "31",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "33",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "34",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "37",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "39",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "40",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "41",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "44",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "45",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "46",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "50",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "52",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "53",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "54",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "57",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "61",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "62",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "64",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "67",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "71",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "76",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "77",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "78",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "80",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "85",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "87",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "90",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "91",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "94",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "98",
+        "task_id": "21"
+      },
+      {
+        "sample_id": "1",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "3",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "7",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "9",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "12",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "15",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "17",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "18",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "22",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "27",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "29",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "31",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "32",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "33",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "34",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "37",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "38",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "40",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "41",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "44",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "45",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "46",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "52",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "54",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "57",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "60",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "61",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "64",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "72",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "76",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "80",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "82",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "84",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "85",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "87",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "91",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "93",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "94",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "95",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "97",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "98",
+        "task_id": "31"
+      },
+      {
+        "sample_id": "1",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "3",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "7",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "12",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "13",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "15",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "17",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "23",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "27",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "30",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "31",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "33",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "34",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "37",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "40",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "41",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "44",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "45",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "46",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "50",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "52",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "54",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "57",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "61",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "64",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "71",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "74",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "75",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "76",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "77",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "78",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "80",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "81",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "85",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "87",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "91",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "92",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "93",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "94",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "95",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "98",
+        "task_id": "36"
+      },
+      {
+        "sample_id": "0",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "1",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "3",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "4",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "10",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "12",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "18",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "19",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "25",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "26",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "27",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "30",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "34",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "37",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "41",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "43",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "45",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "46",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "47",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "49",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "51",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "53",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "57",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "59",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "62",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "63",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "64",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "65",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "66",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "68",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "70",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "71",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "72",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "78",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "81",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "83",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "84",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "89",
+        "task_id": "40"
+      },
+      {
+        "sample_id": "1",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "2",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "3",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "7",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "11",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "12",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "15",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "17",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "19",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "22",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "26",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "27",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "31",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "33",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "34",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "37",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "40",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "41",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "44",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "45",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "46",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "51",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "52",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "54",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "55",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "57",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "61",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "64",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "67",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "76",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "77",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "80",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "82",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "85",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "87",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "90",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "91",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "92",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "94",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "98",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "99",
+        "task_id": "51"
+      },
+      {
+        "sample_id": "0",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "1",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "3",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "7",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "8",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "9",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "12",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "14",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "15",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "16",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "17",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "22",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "27",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "31",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "33",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "34",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "37",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "39",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "40",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "41",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "44",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "45",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "47",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "48",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "50",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "52",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "54",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "57",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "60",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "61",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "64",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "67",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "74",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "76",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "80",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "85",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "87",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "91",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "93",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "94",
+        "task_id": "61"
+      },
+      {
+        "sample_id": "98",
+        "task_id": "61"
+      }
+    ]
+  },
+  "summary": [
+    {
+      "mean_cost_price": 0.23301141984994367,
+      "mean_exec_time_ms": 661.905866895639,
+      "mean_qop": 0.06838181759849879,
+      "mean_reward": 0.11370947045029241,
+      "mean_task_score": 0.4020423033604255,
+      "method": "qwen_baseline",
+      "n": 325,
+      "valid_rate": 0.9046153846153846
+    },
+    {
+      "mean_cost_price": 0.013406378742537821,
+      "mean_exec_time_ms": 103.57160003221952,
+      "mean_qop": 0.2791951273030922,
+      "mean_reward": 0.2739582861242988,
+      "mean_task_score": 0.5820372709975793,
+      "method": "qwen_online_grpo",
+      "n": 325,
+      "valid_rate": 1.0
+    },
+    {
+      "mean_cost_price": 0.30338786757639036,
+      "mean_exec_time_ms": 737.4056673326859,
+      "mean_qop": -0.33379203028943183,
+      "mean_reward": -0.017807524975947384,
+      "mean_task_score": 0.1567924126294943,
+      "method": "catp_llm_offline",
+      "n": 325,
+      "valid_rate": 0.8707692307692307
+    }
+  ]
+}

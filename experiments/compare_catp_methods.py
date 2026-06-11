@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
@@ -20,6 +21,14 @@ DEFAULT_INVALID_PENALTY = -1.0
 def mean(values: Iterable[float]) -> float:
     values = list(values)
     return sum(values) / max(1, len(values))
+
+
+def finite_or(value: Any, default: float) -> float:
+    try:
+        numeric = float(value)
+    except (TypeError, ValueError):
+        return default
+    return numeric if math.isfinite(numeric) else default
 
 
 def read_online_rows(path: Path) -> List[Dict[str, Any]]:
@@ -55,6 +64,8 @@ def reward_from_metrics(
 ) -> float:
     if not valid:
         return invalid_penalty
+    if not all(math.isfinite(value) for value in [task_score, cost_price, exec_time_ms]):
+        return invalid_penalty
     return alpha * task_score + (1.0 - alpha) * (-cost_price) - latency_weight * (exec_time_ms / 1000.0)
 
 
@@ -80,9 +91,9 @@ def read_catp_rows(results_dir: Path) -> List[Dict[str, Any]]:
 
     rows: List[Dict[str, Any]] = []
     for task_id, sample_id, item in iter_catp_entries(valid_payload):
-        task_score = float(item.get("task_score", PENALTY_SCORE))
-        cost_price = float(item.get("cost_price", PENALTY_COST))
-        exec_time = float(item.get("exec_time", 0.0) or 0.0)
+        task_score = finite_or(item.get("task_score"), 0.0)
+        cost_price = finite_or(item.get("cost_price"), PENALTY_COST)
+        exec_time = finite_or(item.get("exec_time"), 0.0)
         rows.append(
             {
                 "task_id": task_id,
@@ -91,14 +102,14 @@ def read_catp_rows(results_dir: Path) -> List[Dict[str, Any]]:
                 "task_score": task_score,
                 "cost_price": cost_price,
                 "exec_time": exec_time,
-                "qop": float(item.get("qop", PENALTY_QOP) if item.get("qop") is not None else PENALTY_QOP),
+                "qop": finite_or(item.get("qop"), PENALTY_QOP),
                 "reward": reward_from_metrics(True, task_score, cost_price, exec_time),
             }
         )
     for task_id, sample_id, item in iter_catp_entries(invalid_payload):
-        task_score = float(item.get("task_score", PENALTY_SCORE))
-        cost_price = float(item.get("cost_price", PENALTY_COST))
-        exec_time = float(item.get("exec_time", 0.0) or 0.0)
+        task_score = finite_or(item.get("task_score"), PENALTY_SCORE)
+        cost_price = finite_or(item.get("cost_price"), PENALTY_COST)
+        exec_time = finite_or(item.get("exec_time"), 0.0)
         rows.append(
             {
                 "task_id": task_id,
@@ -107,7 +118,7 @@ def read_catp_rows(results_dir: Path) -> List[Dict[str, Any]]:
                 "task_score": task_score,
                 "cost_price": cost_price,
                 "exec_time": exec_time,
-                "qop": float(item.get("qop", PENALTY_QOP) if item.get("qop") is not None else PENALTY_QOP),
+                "qop": finite_or(item.get("qop"), PENALTY_QOP),
                 "reward": reward_from_metrics(False, task_score, cost_price, exec_time),
             }
         )
@@ -125,6 +136,72 @@ def summarize_catp_rows(rows: List[Dict[str, Any]], method: str) -> Dict[str, An
         "mean_qop": mean(r["qop"] for r in rows),
         "mean_reward": mean(r["reward"] for r in rows),
     }
+
+
+def online_eval_rows(rows: List[Dict[str, Any]], policy: str) -> List[Dict[str, Any]]:
+    selected = []
+    for row in rows:
+        if row["policy"] != policy:
+            continue
+        selected.append(
+            {
+                "task_id": str(row["task_id"]),
+                "sample_id": str(row["sample_id"]),
+                "valid": 1.0 if row["valid"] == "True" else 0.0,
+                "task_score": finite_or(row["task_score"], PENALTY_SCORE),
+                "cost_price": finite_or(row["cost_price"], PENALTY_COST),
+                "exec_time": finite_or(row["exec_time"], 0.0),
+                "qop": finite_or(row["qop"], PENALTY_QOP),
+                "reward": finite_or(row["reward"], DEFAULT_INVALID_PENALTY),
+            }
+        )
+    return selected
+
+
+def summarize_eval_rows(rows: List[Dict[str, Any]], method: str) -> Dict[str, Any]:
+    return {
+        "method": method,
+        "n": len(rows),
+        "valid_rate": mean(float(r["valid"]) for r in rows),
+        "mean_task_score": mean(float(r["task_score"]) for r in rows),
+        "mean_cost_price": mean(float(r["cost_price"]) for r in rows),
+        "mean_exec_time_ms": mean(float(r["exec_time"]) for r in rows),
+        "mean_qop": mean(float(r["qop"]) for r in rows),
+        "mean_reward": mean(float(r["reward"]) for r in rows),
+    }
+
+
+def per_task_summary(
+    rows_by_method: Dict[str, List[Dict[str, Any]]], keys: set[tuple[str, str]]
+) -> List[Dict[str, Any]]:
+    summaries = []
+    tasks = sorted({task_id for task_id, _ in keys}, key=int)
+    for task_id in tasks:
+        task_keys = {key for key in keys if key[0] == task_id}
+        for method, rows in rows_by_method.items():
+            selected = [row for row in rows if (str(row["task_id"]), str(row["sample_id"])) in task_keys]
+            summary = summarize_eval_rows(selected, method)
+            summaries.append({"task_id": task_id, **summary})
+    return summaries
+
+
+def write_per_task_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
+    fields = [
+        "task_id",
+        "method",
+        "n",
+        "valid_rate",
+        "mean_task_score",
+        "mean_cost_price",
+        "mean_exec_time_ms",
+        "mean_qop",
+        "mean_reward",
+    ]
+    with path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow(row)
 
 
 def online_keys(rows: List[Dict[str, Any]]) -> set[tuple[str, str]]:
@@ -252,9 +329,100 @@ def plot_latency_cost(summary_rows: List[Dict[str, Any]], output_path: Path) -> 
     plt.close()
 
 
+def plot_per_task_score_reward(per_task_rows: List[Dict[str, Any]], output_path: Path) -> None:
+    tasks = sorted({str(row["task_id"]) for row in per_task_rows}, key=int)
+    methods = ["qwen_baseline", "qwen_online_grpo", "catp_llm_offline"]
+    colors = {"qwen_baseline": "tab:blue", "qwen_online_grpo": "tab:orange", "catp_llm_offline": "tab:green"}
+    x = list(range(len(tasks)))
+    width = 0.24
+    fig, axes = plt.subplots(1, 2, figsize=(13, 4.8), sharex=True)
+    for metric, axis, title in [
+        ("mean_task_score", axes[0], "Mean Task Score by Task"),
+        ("mean_reward", axes[1], "Mean Reward by Task"),
+    ]:
+        for idx, method in enumerate(methods):
+            values = [
+                next(
+                    row[metric]
+                    for row in per_task_rows
+                    if str(row["task_id"]) == task_id and row["method"] == method
+                )
+                for task_id in tasks
+            ]
+            offsets = [pos + (idx - 1) * width for pos in x]
+            axis.bar(offsets, values, width=width, label=method, color=colors[method])
+        axis.set_title(title)
+        axis.set_xlabel("Task ID")
+        axis.set_ylabel(metric)
+        axis.set_xticks(x)
+        axis.set_xticklabels(tasks)
+        axis.axhline(0, color="black", linewidth=0.8)
+    axes[0].legend(fontsize=8)
+    fig.tight_layout()
+    fig.savefig(output_path, dpi=160)
+    plt.close()
+
+
+def plot_per_task_latency(per_task_rows: List[Dict[str, Any]], output_path: Path) -> None:
+    tasks = sorted({str(row["task_id"]) for row in per_task_rows}, key=int)
+    methods = ["qwen_baseline", "qwen_online_grpo", "catp_llm_offline"]
+    colors = {"qwen_baseline": "tab:blue", "qwen_online_grpo": "tab:orange", "catp_llm_offline": "tab:green"}
+    x = list(range(len(tasks)))
+    width = 0.24
+    plt.figure(figsize=(11, 4.8))
+    for idx, method in enumerate(methods):
+        values = [
+            next(
+                row["mean_exec_time_ms"]
+                for row in per_task_rows
+                if str(row["task_id"]) == task_id and row["method"] == method
+            )
+            for task_id in tasks
+        ]
+        offsets = [pos + (idx - 1) * width for pos in x]
+        plt.bar(offsets, values, width=width, label=method, color=colors[method])
+    plt.title("Mean Execution Time by Task")
+    plt.xlabel("Task ID")
+    plt.ylabel("Milliseconds")
+    plt.xticks(x, tasks)
+    plt.legend(fontsize=8)
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=160)
+    plt.close()
+
+
+def plot_score_latency_tradeoff(per_task_rows: List[Dict[str, Any]], output_path: Path) -> None:
+    colors = {"qwen_baseline": "tab:blue", "qwen_online_grpo": "tab:orange", "catp_llm_offline": "tab:green"}
+    plt.figure(figsize=(7.5, 5.5))
+    for method, color in colors.items():
+        selected = [row for row in per_task_rows if row["method"] == method]
+        plt.scatter(
+            [row["mean_exec_time_ms"] for row in selected],
+            [row["mean_task_score"] for row in selected],
+            s=[45 + 80 * row["valid_rate"] for row in selected],
+            alpha=0.8,
+            label=method,
+            color=color,
+        )
+        for row in selected:
+            plt.annotate(str(row["task_id"]), (row["mean_exec_time_ms"], row["mean_task_score"]), fontsize=7)
+    plt.title("Quality-Latency Tradeoff by Task")
+    plt.xlabel("Mean execution time (ms)")
+    plt.ylabel("Mean task score")
+    plt.legend(fontsize=8)
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=160)
+    plt.close()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--online_results_dir", required=True)
+    parser.add_argument(
+        "--online_train_metrics",
+        default=None,
+        help="Optional train_metrics.csv path for runs that only evaluate a saved adapter.",
+    )
     parser.add_argument("--catp_results_dir", required=True)
     parser.add_argument("--catp_train_losses", required=True)
     parser.add_argument("--output_dir", default="experiments/results/catp_three_way_compare")
@@ -278,6 +446,11 @@ def main() -> None:
     baseline_rows = [row for row in online_rows if row["policy"] == "qwen_baseline"]
     grpo_rows = [row for row in online_rows if row["policy"] == "qwen_online_grpo"]
     overlap_keys = online_keys(baseline_rows) & online_keys(grpo_rows) & online_keys(catp_rows)
+    rows_by_method = {
+        "qwen_baseline": online_eval_rows(online_rows, "qwen_baseline"),
+        "qwen_online_grpo": online_eval_rows(online_rows, "qwen_online_grpo"),
+        "catp_llm_offline": catp_rows,
+    }
     aligned_summary_rows = [
         summarize_online(filter_online_by_keys(online_rows, overlap_keys), "qwen_baseline"),
         summarize_online(filter_online_by_keys(online_rows, overlap_keys), "qwen_online_grpo"),
@@ -294,8 +467,12 @@ def main() -> None:
     (out_dir / "aligned_final_metrics.json").write_text(
         json.dumps({"metadata": aligned_metadata, "summary": aligned_summary_rows}, indent=2, sort_keys=True)
     )
+    per_task_rows = per_task_summary(rows_by_method, overlap_keys)
+    write_per_task_csv(out_dir / "aligned_per_task_metrics.csv", per_task_rows)
+    (out_dir / "aligned_per_task_metrics.json").write_text(json.dumps(per_task_rows, indent=2, sort_keys=True))
 
-    online_training = read_online_training(online_dir / "train_metrics.csv")
+    online_training_path = Path(args.online_train_metrics) if args.online_train_metrics else online_dir / "train_metrics.csv"
+    online_training = read_online_training(online_training_path)
     catp_losses = read_catp_losses(Path(args.catp_train_losses))
     with (out_dir / "training_curves.csv").open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["method", "step", "value"])
@@ -324,6 +501,9 @@ def main() -> None:
     plot_latency_cost(summary_rows, out_dir / "latency_cost_metrics.png")
     plot_final_metrics(aligned_summary_rows, out_dir / "aligned_final_metrics.png")
     plot_latency_cost(aligned_summary_rows, out_dir / "aligned_latency_cost_metrics.png")
+    plot_per_task_score_reward(per_task_rows, out_dir / "aligned_per_task_score_reward.png")
+    plot_per_task_latency(per_task_rows, out_dir / "aligned_per_task_latency.png")
+    plot_score_latency_tradeoff(per_task_rows, out_dir / "aligned_score_latency_tradeoff.png")
     print(
         json.dumps(
             {

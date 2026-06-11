@@ -1,0 +1,32 @@
+[
+  {
+    "mean_cost_price": 0.23163009306879842,
+    "mean_exec_time_ms": 658.5039921989863,
+    "mean_qop": 0.07008002373674897,
+    "mean_reward": 0.11508253137050835,
+    "mean_task_score": 0.403893507766432,
+    "method": "qwen_baseline",
+    "n": 327,
+    "valid_rate": 0.9051987767584098
+  },
+  {
+    "mean_cost_price": 0.013363658265591247,
+    "mean_exec_time_ms": 103.5721609189605,
+    "mean_qop": 0.27893269162436146,
+    "mean_reward": 0.2736794780595179,
+    "mean_task_score": 0.5814370465684192,
+    "method": "qwen_online_grpo",
+    "n": 327,
+    "valid_rate": 1.0
+  },
+  {
+    "mean_cost_price": 0.30338786757639036,
+    "mean_exec_time_ms": 737.4056673326859,
+    "mean_qop": -0.33379203028943183,
+    "mean_reward": -0.017807524975947384,
+    "mean_task_score": 0.1567924126294943,
+    "method": "catp_llm_offline",
+    "n": 325,
+    "valid_rate": 0.8707692307692307
+  }
+]
